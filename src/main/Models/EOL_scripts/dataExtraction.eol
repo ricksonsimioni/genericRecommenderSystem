@@ -1,0 +1,84 @@
+var userData = new Map();
+var itemData = new Map();
+var ratingsData = new Sequence();
+var categoriesData = new Sequence();
+
+for (user in User.allInstances()) {
+    var userDetails = new Map();
+    userDetails.put("id", user.id); // Use user.get("Id") to access the property
+    userDetails.put("name", user.name); // Similarly, use user.get("name")
+    userData.put(user.id, userDetails); // Use user.get("Id") for the key
+    //System.out.println(userData);
+    
+}
+
+
+for (Item in Item.allInstances()) {
+    var itemDetails = new Map();
+    itemDetails.put("itemId", Item.id);
+    itemDetails.put("itemName", Item.name);
+    itemDetails.put("category", Item.category);
+    itemData.put(Item.id, itemDetails); 	
+    //System.out.println(itemData);
+    
+}
+
+for (UserItemRow in UserItemRow.allInstances()) {
+    var ratingDetails = new Map();
+    ratingDetails.put("userId", UserItemRow.user.id);
+    ratingDetails.put("userName", UserItemRow.user.name);
+    ratingDetails.put("itemId", UserItemRow.item.id);
+    ratingDetails.put("itemName", UserItemRow.item.name);
+    ratingDetails.put("score", UserItemRow.value); 
+    ratingsData.add(ratingDetails);
+    //System.println(ratingsData);
+}
+
+
+
+/*for (ContentBasedPreference in ContentBasedPreference.allInstances()) {
+    var categoriesDetails = new Map();
+    var user = ContentBasedPreference._user; // No need for explicit casting
+    categoriesDetails.put("userId", user);
+    
+    var categoryNames = new Sequence();
+    for (category in ContentBasedPreference._prefs) {
+        categoryNames.add(category);
+    }
+    
+    categoriesDetails.put("prefs", categoryNames);
+    categoriesData.add(categoriesDetails);
+    System.out.println(categoriesData);
+}
+
+
+*/
+
+for (ContentBasedPreference in ContentBasedPreference.allInstances()) {
+    var categoriesDetails = new Map();
+    categoriesDetails.put("userId", ContentBasedPreference._user.id);
+    categoriesDetails.put("userName", ContentBasedPreference._user.name);
+    categoriesDetails.put("prefs", ContentBasedPreference._prefs.category);
+    categoriesData.add(categoriesDetails);
+    //System.out.println(categoriesData);
+}
+
+var extractedData = new Map();
+extractedData.put("userData", userData);
+extractedData.put("itemData", itemData);
+extractedData.put("ratingsData", ratingsData);
+extractedData.put("categoriesData", categoriesData);
+
+//System.out.println(extractedData);
+
+//System.out.println(userData);
+//System.out.println(itemData);
+//System.out.println(ratingsData);
+System.out.println(categoriesData);
+
+
+return extractedData;
+
+
+
+

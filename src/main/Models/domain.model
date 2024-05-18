@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ASCII"?>
+<domain:RSDomain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:domain="http://org.rs.domain" xmi:id="_KkRjkBRXEe-xqaUUKrsSng" names="National Park of Abruzzo">
+  <tourist xmi:id="_4iuNMBRXEe-xqaUUKrsSng" name="Mario">
+    <touristPreference xmi:id="_43EskBRXEe-xqaUUKrsSng" preferredPriceRange="HIGH" preferredTransportationMode="WALK" hikingSkill="AVERAGE"/>
+    <touristProfile xmi:id="_5HHTsBRXEe-xqaUUKrsSng"/>
+  </tourist>
+  <tourist xmi:id="_Hue2oBRhEe-xqaUUKrsSng" name="Francesco">
+    <touristPreference xmi:id="_I0ljEBRhEe-xqaUUKrsSng"/>
+    <touristProfile xmi:id="_JD5xcBRhEe-xqaUUKrsSng"/>
+  </tourist>
+  <tourist xmi:id="_hihccBRhEe-xqaUUKrsSng" name="Sophia">
+    <touristPreference xmi:id="_h8HoMBRhEe-xqaUUKrsSng"/>
+    <touristProfile xmi:id="_ic5aABRhEe-xqaUUKrsSng" gender="FEMALE"/>
+  </tourist>
+  <tourist xmi:id="_jTkjUBRhEe-xqaUUKrsSng" name="Olivia">
+    <touristPreference xmi:id="_ng1_kBRiEe-xqaUUKrsSng"/>
+    <touristProfile xmi:id="_nQblABRiEe-xqaUUKrsSng" gender="FEMALE"/>
+  </tourist>
+  <tourist xmi:id="_jzWPkBRhEe-xqaUUKrsSng" name="Liam">
+    <touristPreference xmi:id="_nwkdoBRiEe-xqaUUKrsSng"/>
+    <touristProfile xmi:id="_lztk0BRhEe-xqaUUKrsSng"/>
+  </tourist>
+  <tourist xmi:id="_kLTckBRhEe-xqaUUKrsSng" name="Ava">
+    <touristPreference xmi:id="_oDtcEBRiEe-xqaUUKrsSng"/>
+    <touristProfile xmi:id="_oS_1QBRiEe-xqaUUKrsSng" gender="FEMALE"/>
+  </tourist>
+  <tourist xmi:id="_kkO58BRhEe-xqaUUKrsSng" name="Noah">
+    <touristPreference xmi:id="_pC4aEBRiEe-xqaUUKrsSng"/>
+    <touristProfile xmi:id="_oswZEBRiEe-xqaUUKrsSng"/>
+  </tourist>
+  <tourist xmi:id="_mY2SMBRhEe-xqaUUKrsSng" name="William">
+    <touristPreference xmi:id="_pY3RIBRiEe-xqaUUKrsSng"/>
+    <touristProfile xmi:id="_pqqy0BRiEe-xqaUUKrsSng"/>
+  </tourist>
+  <tourist xmi:id="_k-AE0BRhEe-xqaUUKrsSng" name="Emma">
+    <touristPreference xmi:id="_qAJ6oBRiEe-xqaUUKrsSng"/>
+    <touristProfile xmi:id="_qUWpABRiEe-xqaUUKrsSng" gender="FEMALE"/>
+  </tourist>
+  <tourist xmi:id="_mviT4BRhEe-xqaUUKrsSng" name="Isabella">
+    <touristPreference xmi:id="_q8b8sBRiEe-xqaUUKrsSng"/>
+    <touristProfile xmi:id="_qmwAkBRiEe-xqaUUKrsSng" gender="FEMALE"/>
+  </tourist>
+  <itineraries xmi:id="_XIi8cBRXEe-xqaUUKrsSng" category="_ZdqZsBRXEe-xqaUUKrsSng" pois="_S2sswBRXEe-xqaUUKrsSng _VI2VkBRXEe-xqaUUKrsSng _U5Bw4BRXEe-xqaUUKrsSng _WUxWIBRXEe-xqaUUKrsSng _TsCZUBRXEe-xqaUUKrsSng" name="Indoor"/>
+  <itineraries xmi:id="_XfGbQBRXEe-xqaUUKrsSng" category="_ZNw8gBRXEe-xqaUUKrsSng" pois="_UBtuYBRXEe-xqaUUKrsSng _TY2XkBRXEe-xqaUUKrsSng _VwPswBRXEe-xqaUUKrsSng _WpJDoBRXEe-xqaUUKrsSng _Ve7TQBRXEe-xqaUUKrsSng" name="Outdoor"/>
+  <pois xsi:type="domain:Indoor" xmi:id="_S2sswBRXEe-xqaUUKrsSng" category="_ZdqZsBRXEe-xqaUUKrsSng" name="Centro Visita Insecta: la vita a sei zampe"/>
+  <pois xsi:type="domain:Indoor" xmi:id="_VI2VkBRXEe-xqaUUKrsSng" category="_ZdqZsBRXEe-xqaUUKrsSng" name="Museo Civico Archeologico Antonio De Nino"/>
+  <pois xsi:type="domain:Indoor" xmi:id="_U5Bw4BRXEe-xqaUUKrsSng" category="_ZdqZsBRXEe-xqaUUKrsSng" name="Museo Storico del Parco Nazionale d'Abruzzo, Lazio e Molise" openingHours=""/>
+  <pois xsi:type="domain:Indoor" xmi:id="_WUxWIBRXEe-xqaUUKrsSng" longitude="" category="_YvRCoBRXEe-xqaUUKrsSng" name="Centro Visita di Civitella Alfedena"/>
+  <pois xsi:type="domain:Indoor" xmi:id="_TsCZUBRXEe-xqaUUKrsSng" category="_ZrfaUBRXEe-xqaUUKrsSng" name="Centro Visita del Camoscio di Opi&#xA;"/>
+  <pois xsi:type="domain:Outdoor" xmi:id="_UBtuYBRXEe-xqaUUKrsSng" category="_ZrfaUBRXEe-xqaUUKrsSng" name="Centro Visita di Pescasseroli"/>
+  <pois xsi:type="domain:Outdoor" xmi:id="_TY2XkBRXEe-xqaUUKrsSng" longitude="" category="_ZdqZsBRXEe-xqaUUKrsSng" name="Museo Oscar Caporaso di Castel San Vincenzo&#xA;"/>
+  <pois xsi:type="domain:Outdoor" xmi:id="_Ve7TQBRXEe-xqaUUKrsSng" category="_ZrfaUBRXEe-xqaUUKrsSng" name="Centro Visita dell'Orso - Villavallelonga"/>
+  <pois xsi:type="domain:Outdoor" xmi:id="_WpJDoBRXEe-xqaUUKrsSng" category="_ZNw8gBRXEe-xqaUUKrsSng" name="Val Fondillo (Opi) - Valico Passaggio dell'Orso&#xA;"/>
+  <pois xsi:type="domain:Outdoor" xmi:id="_VwPswBRXEe-xqaUUKrsSng" category="_ZNw8gBRXEe-xqaUUKrsSng" name="Barrea - Lago Vivo"/>
+  <categories xmi:id="_YvRCoBRXEe-xqaUUKrsSng"/>
+  <categories xmi:id="_ZNw8gBRXEe-xqaUUKrsSng" category="HIKING"/>
+  <categories xmi:id="_ZdqZsBRXEe-xqaUUKrsSng" category="HISTORY"/>
+  <categories xmi:id="_ZrfaUBRXEe-xqaUUKrsSng" category="NATURE"/>
+  <categories xmi:id="_Z5NtQBRXEe-xqaUUKrsSng" category="RELIGION"/>
+</domain:RSDomain>

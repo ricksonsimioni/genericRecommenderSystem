@@ -1,0 +1,12 @@
+@namespace(uri="http://weaving", prefix="w")
+package w;
+
+import "http://org.rs.domain";
+import "http://org.rs";
+
+class Configuration {
+	ref rs.Algorithm[1] filteringRS;
+	ref domain.RSDomain[1] domain;
+}
+
+
