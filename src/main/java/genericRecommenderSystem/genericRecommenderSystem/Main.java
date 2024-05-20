@@ -17,6 +17,8 @@ import org.apache.mahout.cf.taste.recommender.RecommendedItem;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.impl.DynamicEObjectImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -83,6 +85,9 @@ public class Main {
             EPackage.Registry.INSTANCE.put(ePackageRS.getNsURI(), ePackageRS);
             EPackage.Registry.INSTANCE.put(ePackageDomain.getNsURI(), ePackageDomain);
             //EPackage.Registry.INSTANCE.put(ePackageWeaving.getNsURI(), ePackageDomain);
+            System.out.println("EPackage RS registered: " + EPackage.Registry.INSTANCE.get(ePackageRS.getNsURI()));
+            System.out.println("EPackage Domain registered: " + EPackage.Registry.INSTANCE.get(ePackageDomain.getNsURI()));
+
 
 
         	
@@ -92,9 +97,15 @@ public class Main {
             // Initialize and execute the EOL module
             IEolModule module = new EolModule();
             module.parse(new File("src/main/Models/EOL_scripts/dataExtraction.eol"));
+            if (module.getParseProblems().size() > 0) {
+                System.err.println("Parse problems occurred: " + module.getParseProblems());
+            }
 
             String modelURI = "file:src/main/Models/recommendersystemGeneric.model";
             String metamodelUri = "http://org.rs";
+            System.out.println("Model URI: " + modelURI);
+            System.out.println("Metamodel URI: " + metamodelUri);
+
 
             try {
                 EmfModel emfModel = createEmfModel("recommendersystemGeneric", modelURI, metamodelUri);
@@ -102,6 +113,7 @@ public class Main {
                 System.out.println(emfModel + modelURI + metamodelUri); 
                 Object result = module.execute();
                 System.out.println(result); 
+                System.out.println("EOL Script executed. Result: " + result);
                 //Scanner scanner = new Scanner(System.in);
 
                 
@@ -178,11 +190,13 @@ public class Main {
                 }
                }  
 
-            } catch (Exception e) {
+            } catch (EolModelLoadingException e) {
                 e.printStackTrace();
+                System.err.println("Error loading model: " + e.getMessage());
             }
         } catch (Exception e) {
             e.printStackTrace();
+            System.err.println("Error executing EOL script: " + e.getMessage());
         }
     }
     
@@ -283,14 +297,32 @@ public class Main {
         EmfModel emfModel = new EmfModel();
         StringProperties properties = new StringProperties();
         properties.put(EmfModel.PROPERTY_NAME, name);
-        properties.put(EmfModel.PROPERTY_METAMODEL_URI, metamodelUri); // Update metamodel URI here
+        properties.put(EmfModel.PROPERTY_METAMODEL_URI, metamodelUri);
         properties.put(EmfModel.PROPERTY_MODEL_URI, modelUri);
         properties.put(EmfModel.PROPERTY_READONLOAD, "true");
         properties.put(EmfModel.PROPERTY_STOREONDISPOSAL, "false");
         properties.put(EmfModel.PROPERTY_EXPAND, "true");
 
+        System.out.println("Loading model with properties: " + properties);
+
         emfModel.load(properties, (IRelativePathResolver) null);
+        System.out.println("Model loaded: " + emfModel);
+
+        // Debugging loaded content
+        for (Object obj : emfModel.allContents()) {
+            if (obj instanceof DynamicEObjectImpl) {
+                DynamicEObjectImpl dynamicObj = (DynamicEObjectImpl) obj;
+                System.out.println("Loaded object: " + dynamicObj);
+                System.out.println("Object class: " + dynamicObj.eClass().getName());
+                for (EStructuralFeature feature : dynamicObj.eClass().getEAllStructuralFeatures()) {
+                    System.out.println(" - Property: " + feature.getName() + " = " + dynamicObj.eGet(feature));
+                }
+            }
+        }
+
         return emfModel;
     }
+
+
 
 }

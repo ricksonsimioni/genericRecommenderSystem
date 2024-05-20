@@ -3,64 +3,63 @@ var itemData = new Map();
 var ratingsData = new Sequence();
 var categoriesData = new Sequence();
 
+// Debug: Print all user attributes
 for (user in User.allInstances()) {
     var userDetails = new Map();
-    userDetails.put("id", user.id); // Use user.get("Id") to access the property
-    userDetails.put("name", user.name); // Similarly, use user.get("name")
-    userData.put(user.id, userDetails); // Use user.get("Id") for the key
-    //System.out.println(userData);
-    
-}
+    // Assuming 'id' and 'name' are the correct attribute names
+    System.out.println("User ID: " + user.id); 
+    System.out.println("User Name: " + user.name);
 
+    userDetails.put("id", user.id);
+    userDetails.put("name", user.name);
+    userData.put(user.id, userDetails);
+    System.out.println(userData); // Debug output
+}
 
 for (Item in Item.allInstances()) {
     var itemDetails = new Map();
+    // Assuming 'id', 'name', and 'category' are the correct attribute names
+    System.out.println("Item ID: " + Item.id);
+    System.out.println("Item Name: " + Item.name);
+    System.out.println("Item Category: " + Item.category);
+
     itemDetails.put("itemId", Item.id);
     itemDetails.put("itemName", Item.name);
     itemDetails.put("category", Item.category);
-    itemData.put(Item.id, itemDetails); 	
-    //System.out.println(itemData);
-    
+    itemData.put(Item.id, itemDetails);
+    System.out.println(itemData); // Debug output
 }
 
 for (UserItemRow in UserItemRow.allInstances()) {
     var ratingDetails = new Map();
+    // Assuming 'user', 'item', and 'value' are the correct attributes and user/item have 'id' and 'name'
+    System.out.println("UserItemRow User ID: " + UserItemRow.user.id);
+    System.out.println("UserItemRow User Name: " + UserItemRow.user.name);
+    System.out.println("UserItemRow Item ID: " + UserItemRow.item.id);
+    System.out.println("UserItemRow Item Name: " + UserItemRow.item.name);
+    System.out.println("UserItemRow Value: " + UserItemRow.value);
+
     ratingDetails.put("userId", UserItemRow.user.id);
     ratingDetails.put("userName", UserItemRow.user.name);
     ratingDetails.put("itemId", UserItemRow.item.id);
     ratingDetails.put("itemName", UserItemRow.item.name);
-    ratingDetails.put("score", UserItemRow.value); 
+    ratingDetails.put("score", UserItemRow.value);
     ratingsData.add(ratingDetails);
-    //System.println(ratingsData);
+    System.out.println(ratingsData); // Debug output
 }
-
-
-
-/*for (ContentBasedPreference in ContentBasedPreference.allInstances()) {
-    var categoriesDetails = new Map();
-    var user = ContentBasedPreference._user; // No need for explicit casting
-    categoriesDetails.put("userId", user);
-    
-    var categoryNames = new Sequence();
-    for (category in ContentBasedPreference._prefs) {
-        categoryNames.add(category);
-    }
-    
-    categoriesDetails.put("prefs", categoryNames);
-    categoriesData.add(categoriesDetails);
-    System.out.println(categoriesData);
-}
-
-
-*/
 
 for (ContentBasedPreference in ContentBasedPreference.allInstances()) {
     var categoriesDetails = new Map();
+    // Assuming '_user' and '_prefs' are the correct attributes and user has 'id' and 'name'
+    System.out.println("ContentBasedPreference User ID: " + ContentBasedPreference._user.id);
+    System.out.println("ContentBasedPreference User Name: " + ContentBasedPreference._user.name);
+    System.out.println("ContentBasedPreference Prefs Category: " + ContentBasedPreference._prefs.category);
+
     categoriesDetails.put("userId", ContentBasedPreference._user.id);
     categoriesDetails.put("userName", ContentBasedPreference._user.name);
     categoriesDetails.put("prefs", ContentBasedPreference._prefs.category);
     categoriesData.add(categoriesDetails);
-    //System.out.println(categoriesData);
+    System.out.println(categoriesData); // Debug output
 }
 
 var extractedData = new Map();
@@ -69,16 +68,6 @@ extractedData.put("itemData", itemData);
 extractedData.put("ratingsData", ratingsData);
 extractedData.put("categoriesData", categoriesData);
 
-//System.out.println(extractedData);
-
-//System.out.println(userData);
-//System.out.println(itemData);
-//System.out.println(ratingsData);
-System.out.println(categoriesData);
-
+System.out.println(extractedData); // Debug output
 
 return extractedData;
-
-
-
-
