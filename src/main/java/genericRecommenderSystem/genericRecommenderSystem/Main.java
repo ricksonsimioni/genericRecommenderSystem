@@ -39,6 +39,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 
 import java.io.File;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -48,18 +49,6 @@ import java.util.stream.Collectors;
 
 public class Main {
 	
-    public static class CustomModelResourceFactory implements Factory {
-        @Override
-        public Resource createResource(URI uri) {
-            return new CustomModelResource(uri);
-        }
-    }
-    
-    public static class CustomModelResource extends XMIResourceImpl {
-        public CustomModelResource(URI uri) {
-            super(uri);
-        }
-    }
 
 	
     public static void main(String[] args) {
@@ -113,7 +102,7 @@ public class Main {
                 System.out.println(emfModel + modelURI + metamodelUri); 
                 Object result = module.execute();
                 //System.out.println(result); 
-                //System.out.println("EOL Script executed. Result: " + result);
+                System.out.println("EOL Script executed. Result: " + result);
                 //Scanner scanner = new Scanner(System.in);
 
                 
@@ -263,26 +252,9 @@ public class Main {
         properties.put(EmfModel.PROPERTY_STOREONDISPOSAL, "false");
         properties.put(EmfModel.PROPERTY_EXPAND, "true");
 
-        //System.out.println("Loading model with properties: " + properties);
-
         emfModel.load(properties, (IRelativePathResolver) null);
-        System.out.println("Model loaded: " + emfModel);
-
-        // Debugging loaded content
-        for (Object obj : emfModel.allContents()) {
-            if (obj instanceof DynamicEObjectImpl) {
-                DynamicEObjectImpl dynamicObj = (DynamicEObjectImpl) obj;
-                //System.out.println("Loaded object: " + dynamicObj);
-                //System.out.println("Object class: " + dynamicObj.eClass().getName());
-                for (EStructuralFeature feature : dynamicObj.eClass().getEAllStructuralFeatures()) {
-                    //System.out.println(" - Property: " + feature.getName() + " = " + dynamicObj.eGet(feature));
-                }
-            }
-        }
-
         return emfModel;
     }
-    
     
 
 

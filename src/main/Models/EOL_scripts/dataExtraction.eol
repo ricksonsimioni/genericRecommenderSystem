@@ -25,8 +25,8 @@ for (userItemRow in UserItemMatrix.all.first().rows) {
     var item = userItemRow.item;
     var rating = userItemRow.value;
 
-    var userId = user != null ? user.id : user.getId();
-    var itemId = item.id != null ? item.id : item.value();
+    var userId = user.id;
+    var itemId = item.id;
 
     var ratingData = new Map();
 
