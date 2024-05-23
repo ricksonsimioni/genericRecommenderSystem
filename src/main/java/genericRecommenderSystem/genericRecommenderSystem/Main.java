@@ -112,19 +112,19 @@ public class Main {
                 module.getContext().getModelRepository().addModel(emfModel);
                 System.out.println(emfModel + modelURI + metamodelUri); 
                 Object result = module.execute();
-                System.out.println(result); 
-                System.out.println("EOL Script executed. Result: " + result);
+                //System.out.println(result); 
+                //System.out.println("EOL Script executed. Result: " + result);
                 //Scanner scanner = new Scanner(System.in);
 
                 
-                EEnum toiEnum = (EEnum) ePackageDomain.getEClassifier("Category"); 
-                List<String> toiValues = new ArrayList<>();
+                //EEnum toiEnum = (EEnum) ePackageDomain.getEClassifier("Category"); 
+                //List<String> toiValues = new ArrayList<>();
 
-                if (toiEnum != null && toiEnum.getELiterals() != null) {
-                    for (EEnumLiteral literal : toiEnum.getELiterals()) {
-                        toiValues.add(literal.getName());
-                    }
-                }
+                //if (toiEnum != null && toiEnum.getELiterals() != null) {
+                //    for (EEnumLiteral literal : toiEnum.getELiterals()) {
+                //        toiValues.add(literal.getName());
+                //    }
+                //}
 
                     
                 if (result instanceof Map) {
@@ -163,13 +163,12 @@ public class Main {
                         UserSimilarity similarity = new PearsonCorrelationSimilarity(model);
                         UserNeighborhood neighborhood = new NearestNUserNeighborhood(3, similarity, model);
                         GenericUserBasedRecommender recommender = new GenericUserBasedRecommender(model, neighborhood, similarity);
-
                         try (Scanner scanner = new Scanner(System.in)) {
                             System.out.print("Please enter the user ID for which you want recommendations: ");
                             long userId = scanner.nextLong();
 
-                            System.out.println("What's your favorite topic of interest?" + toiValues);
-                            String favoriteTOI = scanner.next();
+                           // System.out.println("What's your favorite topic of interest?" + toiValues);
+                          //  String favoriteTOI = scanner.next();
 
                             List<RecommendedItem> recommendations = recommender.recommend(userId, 10);
                            // List<RecommendedItem> rerankedRecommendations = rerankRecommendations(recommendations, favoriteTOI, itemData);
@@ -223,7 +222,7 @@ public class Main {
                 try {
                     Long userId = Long.parseLong(rating.get("userId").toString());
                     Long itemId = Long.parseLong(rating.get("itemId").toString());
-                    float value = Float.parseFloat(rating.get("value").toString());
+                    float value = Float.parseFloat(rating.get("rating").toString()); // Ensure key matches your data ("rating")
 
                     ratingsData.computeIfAbsent(userId, k -> new ArrayList<>()).add(new Object[]{itemId, value});
                 } catch (NumberFormatException e) {
@@ -233,6 +232,7 @@ public class Main {
         }
         return ratingsData;
     }
+
 
     private static FastByIDMap<PreferenceArray> processData(Map<Long, List<Object[]>> ratingsData) {
         FastByIDMap<PreferenceArray> userData = new FastByIDMap<>();
@@ -253,46 +253,6 @@ public class Main {
         return userData;
     }
 
-    private static Resource loadModel(String path) {
-        ResourceSet resourceSet = new ResourceSetImpl();
-        resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("model", new Main.CustomModelResourceFactory());
-        URI fileURI = URI.createFileURI(new File(path).getAbsolutePath());
-
-        Resource resource = null;
-        try {
-            resource = resourceSet.getResource(fileURI, true);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return resource;
-    }
-    
-
-    
-    private static void printExtractedData(Map<?, ?> extractedData) {
-        if (extractedData == null) {
-            System.out.println("No data was extracted.");
-            return;
-        }
-
-        System.out.println("Extracted Data:");
-        for (Map.Entry<?, ?> entry : extractedData.entrySet()) {
-            System.out.println("Key: " + entry.getKey());
-            Object value = entry.getValue();
-
-            if (value instanceof Map) {
-                System.out.println("Values: ");
-                ((Map<?, ?>)value).forEach((key, val) -> System.out.println("  " + key + " -> " + val));
-            } else if (value instanceof List) {
-                System.out.println("Values: ");
-                ((List<?>)value).forEach(item -> System.out.println("  - " + item));
-            } else {
-                System.out.println("Value: " + value);
-            }
-        }
-    }
-
-
     private static EmfModel createEmfModel(String name, String modelUri, String metamodelUri) throws EolModelLoadingException {
         EmfModel emfModel = new EmfModel();
         StringProperties properties = new StringProperties();
@@ -303,7 +263,7 @@ public class Main {
         properties.put(EmfModel.PROPERTY_STOREONDISPOSAL, "false");
         properties.put(EmfModel.PROPERTY_EXPAND, "true");
 
-        System.out.println("Loading model with properties: " + properties);
+        //System.out.println("Loading model with properties: " + properties);
 
         emfModel.load(properties, (IRelativePathResolver) null);
         System.out.println("Model loaded: " + emfModel);
@@ -312,16 +272,18 @@ public class Main {
         for (Object obj : emfModel.allContents()) {
             if (obj instanceof DynamicEObjectImpl) {
                 DynamicEObjectImpl dynamicObj = (DynamicEObjectImpl) obj;
-                System.out.println("Loaded object: " + dynamicObj);
-                System.out.println("Object class: " + dynamicObj.eClass().getName());
+                //System.out.println("Loaded object: " + dynamicObj);
+                //System.out.println("Object class: " + dynamicObj.eClass().getName());
                 for (EStructuralFeature feature : dynamicObj.eClass().getEAllStructuralFeatures()) {
-                    System.out.println(" - Property: " + feature.getName() + " = " + dynamicObj.eGet(feature));
+                    //System.out.println(" - Property: " + feature.getName() + " = " + dynamicObj.eGet(feature));
                 }
             }
         }
 
         return emfModel;
     }
+    
+    
 
 
 

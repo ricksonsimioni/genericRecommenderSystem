@@ -15,6 +15,8 @@
 	<mahout.version>0.14.0</mahout.version>
 	</properties>
 	<dependencies>
+
+
 		<!-- Apache Mahout -->
 		<dependency>
 			<groupId>org.apache.mahout</groupId>
@@ -118,23 +120,12 @@
 			<artifactId>opencsv</artifactId>
 			<version>4.1</version>
 		</dependency>
-		<!-- Add other dependencies as needed -->
-		<!--<dependency>
-			<groupId>fraunhofer</groupId>
-			<artifactId>mahout-recommender</artifactId>
-			<version>0.1.0-SNAPSHOT</version>
-		</dependency>
-		-->
 		<dependency>
 			<groupId>org.eclipse.epsilon</groupId>
 			<artifactId>epsilon-core</artifactId>
 			<version>1.4.0</version>
 		</dependency>
+		
 
-		<dependency>
-			<groupId>newtrsmahout</groupId>
-			<artifactId>newtrsmahout</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
 	</dependencies>
 </project>
