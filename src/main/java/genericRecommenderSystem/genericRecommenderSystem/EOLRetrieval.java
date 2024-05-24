@@ -67,7 +67,7 @@ public class EOLRetrieval {
 
         // Load the EMF models
         List<IModel> models = new ArrayList<>();
-        models.add(loadEmfModel("genericrecommenderSystem", "src/main/Models/recommendersystemGeneric.model", true, false));
+        models.add(loadEmfModel("recommendersystemGeneric", "src/main/Models/recommendersystemGeneric.model", true, false));
 
         // Add models to the EOL module
         for (IModel model : models) {
@@ -101,4 +101,5 @@ public class EOLRetrieval {
         model.load();
         return model;
     }
+
 }
