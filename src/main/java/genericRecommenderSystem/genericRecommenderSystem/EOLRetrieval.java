@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,15 +23,11 @@ public class EOLRetrieval {
             // Register the Ecore Resource Factory
             Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("ecore", new EcoreResourceFactoryImpl());
 
-            // Correctly load the Ecore file
-            ResourceSet resourceSet = new ResourceSetImpl();
-            Resource ecoreResource = resourceSet.getResource(URI.createFileURI("src/main/Models/recommendersystemGeneric.ecore"), true);
-            
-            // Assuming you want to work with the root EPackage
-            EPackage ePackage = (EPackage) ecoreResource.getContents().get(0);
-            EPackage.Registry.INSTANCE.put(ePackage.getNsURI(), ePackage);
-
-            System.out.println("EPackage registered: " + EPackage.Registry.INSTANCE.get(ePackage.getNsURI()));
+            // Register the first Ecore file (recommendersystemGeneric.ecore)
+            ResourceSet resourceSetRS = new ResourceSetImpl();
+            Resource ecoreResourceRS = resourceSetRS.getResource(URI.createFileURI("src/main/Models/recommendersystemGeneric.ecore"), true);
+            EPackage ePackageRS = (EPackage) ecoreResourceRS.getContents().get(0);
+            EPackage.Registry.INSTANCE.put(ePackageRS.getNsURI(), ePackageRS);
 
             // Register the second Ecore file (domain.ecore)
             ResourceSet resourceSetDomain = new ResourceSetImpl();
@@ -40,6 +35,7 @@ public class EOLRetrieval {
             EPackage ePackageDomain = (EPackage) ecoreResourceDomain.getContents().get(0);
             EPackage.Registry.INSTANCE.put(ePackageDomain.getNsURI(), ePackageDomain);
 
+            System.out.println("EPackage RS registered: " + EPackage.Registry.INSTANCE.get(ePackageRS.getNsURI()));
             System.out.println("EPackage Domain registered: " + EPackage.Registry.INSTANCE.get(ePackageDomain.getNsURI()));
         } catch (Exception e) {
             e.printStackTrace();
@@ -53,8 +49,6 @@ public class EOLRetrieval {
         // Load your EOL script
         File scriptFile = new File("src/main/Models/EOL_scripts/dataExtraction.eol");
         module.parse(scriptFile);
-        
-        
 
         // Ensure the script is parsed correctly
         if (module.getParseProblems().size() > 0) {
@@ -67,18 +61,12 @@ public class EOLRetrieval {
 
         // Load the EMF models
         List<IModel> models = new ArrayList<>();
-        models.add(loadEmfModel("recommendersystemGeneric", "src/main/Models/recommendersystemGeneric.model", true, false));
+        models.add(loadEmfModel("recommendersystemModel", "src/main/Models/recommendersystemGeneric.model", "http://org.rs", true, false));
 
         // Add models to the EOL module
         for (IModel model : models) {
             module.getContext().getModelRepository().addModel(model);
         }
-        
-        System.out.println("Models in repository:");
-        for (Object obj : module.getContext().getModelRepository().getModels()) {
-            System.out.println(obj);
-        }
-
 
         // Execute the script
         Object result = module.execute();
@@ -92,14 +80,14 @@ public class EOLRetrieval {
         }
     }
 
-    public static EmfModel loadEmfModel(String name, String modelPath, boolean readOnLoad, boolean storeOnDisposal) throws Exception {
+    public static EmfModel loadEmfModel(String name, String modelPath, String metamodelUri, boolean readOnLoad, boolean storeOnDisposal) throws Exception {
         EmfModel model = new EmfModel();
         model.setName(name);
+        model.setMetamodelUri(metamodelUri);
         model.setModelFile(modelPath);
         model.setReadOnLoad(readOnLoad);
         model.setStoredOnDisposal(storeOnDisposal);
         model.load();
         return model;
     }
-
 }
