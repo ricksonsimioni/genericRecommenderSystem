@@ -57,7 +57,7 @@ extractedData.put("categoriesData", categoriesData);
 
 //System.out.println(userData);
 //System.out.println(itemData);
-//System.out.println(ratingsData);
+System.out.println(ratingsData);
 //System.out.println(categoriesData);
 
 
