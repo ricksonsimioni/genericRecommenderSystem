@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<domain:MovieDomain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://org.rs.domain.movie" xmi:id="_eNsmUBwPEe-MJOXqr4RUeA">
+  <watcher xmi:id="_j9bwUBwPEe-MJOXqr4RUeA" name="Mario">
+    <watcherPreference xmi:id="_lLpP4BwPEe-MJOXqr4RUeA"/>
+    <watcherProfile xmi:id="_lc-QcBwPEe-MJOXqr4RUeA"/>
+  </watcher>
+  <series xmi:id="_nvxZgBwPEe-MJOXqr4RUeA" category="_geI-8BwPEe-MJOXqr4RUeA"/>
+  <movies xmi:id="_muZcEBwPEe-MJOXqr4RUeA"/>
+  <categories xmi:id="_foE5oBwPEe-MJOXqr4RUeA"/>
+  <categories xmi:id="_gFXSkBwPEe-MJOXqr4RUeA" category="COMEDY"/>
+  <categories xmi:id="_geI-8BwPEe-MJOXqr4RUeA" category="DOCUMENTARY"/>
+  <categories xmi:id="_g5DZUBwPEe-MJOXqr4RUeA" category="DRAMA"/>
+  <categories xmi:id="_greQUBwPEe-MJOXqr4RUeA" category="HORROR"/>
+</domain:MovieDomain>

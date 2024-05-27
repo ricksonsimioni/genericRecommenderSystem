@@ -6,7 +6,7 @@
         eType="#//Tourist" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="itineraries" lowerBound="1"
         upperBound="-1" eType="#//Itinerary" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="names" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pois" upperBound="-1" eType="#//POI"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="categories" upperBound="-1"
@@ -52,6 +52,7 @@
         eType="#//TouristProfile" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Itinerary" eSuperTypes="http://org.rs#//Item">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="category" eType="#//POICategory"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="transportationMode" eType="#//TransportationMode"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pois" upperBound="-1" eType="#//POI"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

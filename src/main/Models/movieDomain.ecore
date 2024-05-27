@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="domain" nsURI="http://org.rs.domain.movie" nsPrefix="domain">
+  <eClassifiers xsi:type="ecore:EClass" name="MovieDomain">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="watcher" upperBound="-1"
+        eType="#//Watcher" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="series" lowerBound="1"
+        upperBound="-1" eType="#//Series" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="movies" upperBound="-1"
+        eType="#//Movie" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="categories" upperBound="-1"
+        eType="#//ShowCategory" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Show" abstract="true" eSuperTypes="http://org.rs#//Item">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pg" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="category" eType="#//ShowCategory"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ShowCategory" eSuperTypes="http://org.rs#//Preference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="#//Category"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Movie" eSuperTypes="#//Show">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Series" eSuperTypes="#//Show">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="seasons" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WatcherPreference" eSuperTypes="http://org.rs#//Preference"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WatcherProfile" eSuperTypes="http://org.rs#//Profile">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="age" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Watcher" eSuperTypes="http://org.rs#//User">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="watcherPreference" lowerBound="1"
+        eType="#//WatcherPreference" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="watcherProfile" lowerBound="1"
+        eType="#//WatcherProfile" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Category">
+    <eLiterals name="ACTION"/>
+    <eLiterals name="DRAMA" value="1"/>
+    <eLiterals name="COMEDY" value="2"/>
+    <eLiterals name="DOCUMENTARY" value="3"/>
+    <eLiterals name="HORROR" value="4"/>
+  </eClassifiers>
+</ecore:EPackage>
