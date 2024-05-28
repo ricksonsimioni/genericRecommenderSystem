@@ -11,14 +11,12 @@
     <semanticResources>domainAnnotated.emf</semanticResources>
     <semanticResources>domainAnnotated.ecore</semanticResources>
     <semanticResources>recommenderSystemGenericAnnotated.ecore</semanticResources>
-    <semanticResources>weaving.emf</semanticResources>
     <semanticResources>http://org.trs.domain</semanticResources>
     <semanticResources>recommendersystemGeneric.emf</semanticResources>
     <semanticResources>recommendersystemGeneric.ecore</semanticResources>
     <semanticResources>domain.ecore</semanticResources>
     <semanticResources>domain.emf</semanticResources>
     <semanticResources>domainMovie.emf</semanticResources>
-    <semanticResources>weaving.ecore</semanticResources>
     <semanticResources>domainMovie.ecore</semanticResources>
     <semanticResources>domain.movie.model</semanticResources>
     <semanticResources>movieDomain.model</semanticResources>

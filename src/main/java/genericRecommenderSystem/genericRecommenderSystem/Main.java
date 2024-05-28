@@ -38,7 +38,6 @@ import org.eclipse.emf.ecore.resource.Resource.Factory;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 
-
 import java.io.File;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -47,9 +46,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Collectors;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 public class Main {
 	
@@ -87,28 +83,11 @@ public class Main {
             // Load the XMI model
             //Resource resource = loadModel("src/main/Models/recommendersystemGeneric.model");
 
+            // Initialize and execute the EOL module
             IEolModule module = new EolModule();
-            try {
-                // Load the script from file
-                String scriptPath = "src/main/Models/EOL_scripts/dataExtraction.eol";
-                String scriptContent = new String(Files.readAllBytes(Paths.get(scriptPath)));
-                
-                // Parse and execute the script
-                module.parse(scriptContent);
-                
-                // Check for parse problems
-                if (module.getParseProblems().size() > 0) {
-                    System.err.println("Parse problems occurred: " + module.getParseProblems());
-                } else {
-                    // Execute the script
-                    module.execute();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-                System.err.println("Error reading EOL script file: " + e.getMessage());
-            } catch (Exception e) {
-                e.printStackTrace();
-                System.err.println("Error executing EOL script: " + e.getMessage());
+            module.parse(new File("src/main/Models/EOL_scripts/dataExtraction.eol"));
+            if (module.getParseProblems().size() > 0) {
+                System.err.println("Parse problems occurred: " + module.getParseProblems());
             }
 
             String modelURI = "src/main/Models/recommendersystemGeneric.model";

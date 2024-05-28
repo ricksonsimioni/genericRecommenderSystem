@@ -1,3 +1,4 @@
+
 var userData = new Map();
 var itemData = new Map();
 var ratingsData = new Sequence();
@@ -8,8 +9,8 @@ var categoriesData = new Sequence();
 
 for (user in domain!User.allInstances()) {
     var userDetails = new Map();
-    userDetails.put("id", user.id); // Use user.get("Id") to access the property
-    userDetails.put("name", user.name); // Similarly, use user.get("name")
+    userDetails.put("userId", user.id); // Use user.get("Id") to access the property
+    userDetails.put("userName", user.name); // Similarly, use user.get("name")
     userData.put(user.id, userDetails); // Use user.get("Id") for the key
 }
 
@@ -64,8 +65,10 @@ extractedData.put("categoriesData", categoriesData);
 
 
 return extractedData;
-
 /*
+
+////////////////////////////////////
+
 var userData = new Map();
 var itemData = new Map();
 var ratingsData = new Sequence();
@@ -76,23 +79,25 @@ var categoriesData = new Sequence();
 
 for (user in User.allInstances()) {
     var userDetails = new Map();
-    userDetails.put("id", user.id); // Use user.get("Id") to access the property
-    userDetails.put("name", user.name); // Similarly, use user.get("name")
+    userDetails.put("userId", user.id); // Use user.get("Id") to access the property
+    userDetails.put("userName", user.name); // Similarly, use user.get("name")
     userData.put(user.id, userDetails); // Use user.get("Id") for the key
 }
 
 for (Item in Item.allInstances()) {
     var itemDetails = new Map();
-    itemDetails.put("itemId", Item._id);
+    itemDetails.put("itemId", Item.id);
     itemDetails.put("itemName", Item.name);
     itemDetails.put("category", Item.category);
     itemData.put(Item.id, itemDetails); 	
     
 }
 
+
 for (userItemRow in UserItemMatrix.all.first().rows) {
-    var userId = userItemRow.user.id;
-    var itemId = userItemRow.item.id;
+    var userId = userItemRow._user.id;
+    //var userId = userItemRow._user.id;
+    var itemId = userItemRow._item.id;
     var rating = userItemRow.value;
 
     var ratingData = new Map();
@@ -115,7 +120,6 @@ for (ContentBasedPreference in ContentBasedPreference.allInstances()) {
     //System.out.println(categoriesData);
 }
 
-
 //recommendersystemModel!ContentBasedPreference.attributes().println();
 var extractedData = new Map();
 extractedData.put("userData", userData);
@@ -133,4 +137,3 @@ extractedData.put("categoriesData", categoriesData);
 
 return extractedData;
 */
-
