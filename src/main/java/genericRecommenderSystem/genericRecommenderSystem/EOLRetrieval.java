@@ -34,9 +34,17 @@ public class EOLRetrieval {
             Resource ecoreResourceDomain = resourceSetDomain.getResource(URI.createFileURI("src/main/Models/domain.ecore"), true);
             EPackage ePackageDomain = (EPackage) ecoreResourceDomain.getContents().get(0);
             EPackage.Registry.INSTANCE.put(ePackageDomain.getNsURI(), ePackageDomain);
+            
+            // Register the second Ecore file (domain.ecore)
+            ResourceSet resourceSetWeaving = new ResourceSetImpl();
+            Resource ecoreResourceWeaving = resourceSetWeaving.getResource(URI.createFileURI("src/main/Models/weaving.ecore"), true);
+            EPackage ePackageWeaving = (EPackage) ecoreResourceWeaving.getContents().get(0);
+            EPackage.Registry.INSTANCE.put(ePackageWeaving.getNsURI(), ePackageWeaving);
 
             System.out.println("EPackage RS registered: " + EPackage.Registry.INSTANCE.get(ePackageRS.getNsURI()));
             System.out.println("EPackage Domain registered: " + EPackage.Registry.INSTANCE.get(ePackageDomain.getNsURI()));
+            //System.out.println("EPackage Weaving registered: " + EPackage.Registry.INSTANCE.get(ePackageWeaving.getNsURI()));
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -62,6 +70,10 @@ public class EOLRetrieval {
         // Load the EMF models
         List<IModel> models = new ArrayList<>();
         models.add(loadEmfModel("recommendersystemModel", "src/main/Models/recommendersystemGeneric.model", "http://org.rs", true, false));
+        models.add(loadEmfModel("domain", "src/main/Models/domain.model", "http://org.rs.domain", true, false));
+        //models.add(loadEmfModel("weaving", "src/main/Models/weaving.model", "http://weaving", true, false));
+
+
 
         // Add models to the EOL module
         for (IModel model : models) {
@@ -87,6 +99,7 @@ public class EOLRetrieval {
         model.setModelFile(modelPath);
         model.setReadOnLoad(readOnLoad);
         model.setStoredOnDisposal(storeOnDisposal);
+        model.setExpand(true);
         model.load();
         return model;
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<domain:RSDomain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:domain="http://org.rs.domain" xmi:id="_KkRjkBRXEe-xqaUUKrsSng" names="National Park of Abruzzo">
+<domain:RSDomain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:domain="http://org.rs.domain" xmi:id="_KkRjkBRXEe-xqaUUKrsSng" name="National Park of Abruzzo">
   <tourist xmi:id="_4iuNMBRXEe-xqaUUKrsSng" name="Mario">
     <touristPreference xmi:id="_43EskBRXEe-xqaUUKrsSng" preferredPriceRange="HIGH" preferredTransportationMode="WALK" hikingSkill="AVERAGE"/>
     <touristProfile xmi:id="_5HHTsBRXEe-xqaUUKrsSng"/>

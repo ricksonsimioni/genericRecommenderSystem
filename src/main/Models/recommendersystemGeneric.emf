@@ -3,7 +3,7 @@ package rs;
 
 
 class User {
-	attr int Id;
+	attr int _id;
 }
 
 abstract class Preference {
@@ -20,8 +20,8 @@ class CollaborativeFiltering extends FilteringRS {
 }
 
 class UserItemRow {
-	ref User[1] user;
-	ref Item[1] item;
+	ref User[1] _user;
+	ref Item[1] _item;
 	attr float value;
 }
 

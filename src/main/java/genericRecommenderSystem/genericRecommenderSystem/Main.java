@@ -38,6 +38,7 @@ import org.eclipse.emf.ecore.resource.Resource.Factory;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 
+
 import java.io.File;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -46,6 +47,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Collectors;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class Main {
 	
@@ -83,37 +87,75 @@ public class Main {
             // Load the XMI model
             //Resource resource = loadModel("src/main/Models/recommendersystemGeneric.model");
 
-            // Initialize and execute the EOL module
             IEolModule module = new EolModule();
-            module.parse(new File("src/main/Models/EOL_scripts/dataExtraction.eol"));
-            if (module.getParseProblems().size() > 0) {
-                System.err.println("Parse problems occurred: " + module.getParseProblems());
+            try {
+                // Load the script from file
+                String scriptPath = "src/main/Models/EOL_scripts/dataExtraction.eol";
+                String scriptContent = new String(Files.readAllBytes(Paths.get(scriptPath)));
+                
+                // Parse and execute the script
+                module.parse(scriptContent);
+                
+                // Check for parse problems
+                if (module.getParseProblems().size() > 0) {
+                    System.err.println("Parse problems occurred: " + module.getParseProblems());
+                } else {
+                    // Execute the script
+                    module.execute();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.err.println("Error reading EOL script file: " + e.getMessage());
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.err.println("Error executing EOL script: " + e.getMessage());
             }
 
-            String modelURI = "file:src/main/Models/recommendersystemGeneric.model";
+            String modelURI = "src/main/Models/recommendersystemGeneric.model";
             String metamodelUri = "http://org.rs";
             System.out.println("Model URI: " + modelURI);
             System.out.println("Metamodel URI: " + metamodelUri);
 
 
             try {
-                EmfModel emfModel = createEmfModel("recommendersystemGeneric", modelURI, metamodelUri);
-                module.getContext().getModelRepository().addModel(emfModel);
-                System.out.println(emfModel + modelURI + metamodelUri); 
+                List<IModel> models = new ArrayList<>();
+                models.add(loadEmfModel("recommendersystemModel", "src/main/Models/recommendersystemGeneric.model", "http://org.rs", true, false));
+                models.add(loadEmfModel("domain", "src/main/Models/domain.model", "http://org.rs.domain", true, false));
+                
+             // Add models to the EOL module
+                for (IModel model : models) {
+                    module.getContext().getModelRepository().addModel(model);
+                }
+
+                // Execute the script
                 Object result = module.execute();
+
+                // Handle the result if needed
+                System.out.println("Result: " + result);
+
+                // Dispose the models
+                for (IModel model : models) {
+                    model.dispose();
+                }
+            
+                
+                //EmfModel emfModel = createEmfModel("recommendersystemGeneric", modelURI, metamodelUri);
+                //module.getContext().getModelRepository().addModel(emfModel);
+                //System.out.println(emfModel + modelURI + metamodelUri); 
+                //Object result = module.execute();
                 //System.out.println(result); 
-                System.out.println("EOL Script executed. Result: " + result);
+                //System.out.println("EOL Script executed. Result: " + result);
                 //Scanner scanner = new Scanner(System.in);
 
                 
-                //EEnum toiEnum = (EEnum) ePackageDomain.getEClassifier("Category"); 
-                //List<String> toiValues = new ArrayList<>();
+                EEnum toiEnum = (EEnum) ePackageDomain.getEClassifier("Category"); 
+                List<String> toiValues = new ArrayList<>();
 
-                //if (toiEnum != null && toiEnum.getELiterals() != null) {
-                //    for (EEnumLiteral literal : toiEnum.getELiterals()) {
-                //        toiValues.add(literal.getName());
-                //    }
-                //}
+                if (toiEnum != null && toiEnum.getELiterals() != null) {
+                    for (EEnumLiteral literal : toiEnum.getELiterals()) {
+                        toiValues.add(literal.getName());
+                    }
+                }
 
                     
                 if (result instanceof Map) {
@@ -254,6 +296,18 @@ public class Main {
 
         emfModel.load(properties, (IRelativePathResolver) null);
         return emfModel;
+    }
+    
+    public static EmfModel loadEmfModel(String name, String modelPath, String metamodelUri, boolean readOnLoad, boolean storeOnDisposal) throws Exception {
+        EmfModel model = new EmfModel();
+        model.setName(name);
+        model.setMetamodelUri(metamodelUri);
+        model.setModelFile(modelPath);
+        model.setReadOnLoad(readOnLoad);
+        model.setStoredOnDisposal(storeOnDisposal);
+        model.setExpand(true);
+        model.load();
+        return model;
     }
     
 
