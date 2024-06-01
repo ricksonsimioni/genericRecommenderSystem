@@ -14,7 +14,7 @@ class RSDomain {
 abstract class POI extends rs.Item {
 	attr String latitude;
 	attr String longitude;
-	ref POICategory category; 
+	ref  POICategory[*] category; 
 	attr String name;
 	attr String openingHours;
 	!unique attr OpeningDays[*] openingDays;

@@ -1,33 +1,31 @@
-
 var userData = new Map();
 var itemData = new Map();
 var ratingsData = new Sequence();
 var categoriesData = new Sequence();
 
-
-//domain!Item.allInstances().println();
-
-for (user in domain!User.allInstances()) {
+for (user in recommendersystemModel!User.allInstances()) {
     var userDetails = new Map();
-    userDetails.put("userId", user.id); // Use user.get("Id") to access the property
-    userDetails.put("userName", user.name); // Similarly, use user.get("name")
-    userData.put(user.id, userDetails); // Use user.get("Id") for the key
+    userDetails.put("userId", user.identification); 
+    userDetails.put("userName", user.name); 
+    userData.put(user.id, userDetails); 
 }
 
-for (Item in domain!Item.allInstances()) {
+
+for (Item in recommendersystemModel!Item.allInstances()) {
     var itemDetails = new Map();
-    itemDetails.put("itemId", Item.id);
+    itemDetails.put("itemId", Item.identification);
     itemDetails.put("itemName", Item.name);
-    itemDetails.put("category", Item.category);
-    itemData.put(Item.id, itemDetails); 	
+    itemDetails.put("category", Item.category.category);
     
+
+    itemData.put(Item.id, itemDetails);
 }
 
 
 for (userItemRow in recommendersystemModel!UserItemMatrix.all.first().rows) {
-    var userId = userItemRow._user.id;
-    var itemId = userItemRow._item.id;
-    var rating = userItemRow.value.id;
+    var userId = userItemRow._user.identification;
+    var itemId = userItemRow._item.identification;
+    var rating = userItemRow.value;
 
     var ratingData = new Map();
 
@@ -41,86 +39,48 @@ for (userItemRow in recommendersystemModel!UserItemMatrix.all.first().rows) {
 
 for (ContentBasedPreference in recommendersystemModel!ContentBasedPreference.allInstances()) {
     var categoriesDetails = new Map();
-   
-    categoriesDetails.put("userId", ContentBasedPreference._user.id);
+    categoriesDetails.put("userId", ContentBasedPreference._user.identification);
     categoriesDetails.put("userName", ContentBasedPreference._user.name);
-    categoriesDetails.put("prefs", ContentBasedPreference._prefs.category);
-    categoriesData.add(categoriesDetails);
-    //System.out.println(categoriesData);
-}
-
-//recommendersystemModel!ContentBasedPreference.attributes().println();
-var extractedData = new Map();
-extractedData.put("userData", userData);
-extractedData.put("itemData", itemData);
-extractedData.put("ratingsData", ratingsData);
-extractedData.put("categoriesData", categoriesData);
-
-//System.out.println(extractedData);
-
-//System.out.println(userData);
-//System.out.println(itemData);
-//System.out.println(ratingsData);
-//System.out.println(categoriesData);
-
-
-return extractedData;
-/*
-
-////////////////////////////////////
-
-var userData = new Map();
-var itemData = new Map();
-var ratingsData = new Sequence();
-var categoriesData = new Sequence();
-
-
-//domain!Item.allInstances().println();
-
-for (user in User.allInstances()) {
-    var userDetails = new Map();
-    userDetails.put("userId", user.id); // Use user.get("Id") to access the property
-    userDetails.put("userName", user.name); // Similarly, use user.get("name")
-    userData.put(user.id, userDetails); // Use user.get("Id") for the key
-}
-
-for (Item in Item.allInstances()) {
-    var itemDetails = new Map();
-    itemDetails.put("itemId", Item.id);
-    itemDetails.put("itemName", Item.name);
-    itemDetails.put("category", Item.category);
-    itemData.put(Item.id, itemDetails); 	
+   
+    var prefs = ContentBasedPreference._prefs;
     
-}
-
-
-for (userItemRow in UserItemMatrix.all.first().rows) {
-    var userId = userItemRow._user.id;
-    //var userId = userItemRow._user.id;
-    var itemId = userItemRow._item.id;
-    var rating = userItemRow.value;
-
-    var ratingData = new Map();
-
-    ratingData.put("userId", userId);
-    ratingData.put("itemId", itemId);
-    ratingData.put("rating", rating);
-
-    ratingsData.add(ratingData);
-}
-
-
-for (ContentBasedPreference in ContentBasedPreference.allInstances()) {
-    var categoriesDetails = new Map();
-   
-    categoriesDetails.put("userId", ContentBasedPreference._user.id);
-    categoriesDetails.put("userName", ContentBasedPreference._user.name);
-    categoriesDetails.put("prefs", ContentBasedPreference._prefs.category);
+    // Create a list to hold preference details
+    var prefsDetails = new Sequence();
+    
+    for (pref in prefs) {
+        var prefDetails = new Map();
+        var features = pref.eClass().eAllStructuralFeatures;
+        for (feature in features) {
+            var featureName = feature.name;
+            var featureValue = pref.eGet(feature);
+            if (featureValue.isKindOf(recommendersystemModel!EEnumLiteral)) {
+                featureValue = featureValue.name;
+            }
+            prefDetails.put(featureName, featureValue);
+        }
+        prefsDetails.add(prefDetails);
+    }
+    
+    categoriesDetails.put("prefs", prefsDetails);
     categoriesData.add(categoriesDetails);
-    //System.out.println(categoriesData);
 }
 
-//recommendersystemModel!ContentBasedPreference.attributes().println();
+// Print the result to verify
+for (categoryDetail in categoriesData) {
+   // System.out.println("User ID: " + categoryDetail.get("userId"));
+  //  System.out.println("User Name: " + categoryDetail.get("userName"));
+    for (prefDetail in categoryDetail.get("prefs")) {
+        //System.out.println("Preferences:");
+        for (key in prefDetail.keySet()) {
+            //System.out.println("  " + key + " = " + prefDetail.get(key));
+        }
+    }
+}
+
+
+
+
+
 var extractedData = new Map();
 extractedData.put("userData", userData);
 extractedData.put("itemData", itemData);
@@ -128,7 +88,6 @@ extractedData.put("ratingsData", ratingsData);
 extractedData.put("categoriesData", categoriesData);
 
 //System.out.println(extractedData);
-
 //System.out.println(userData);
 //System.out.println(itemData);
 //System.out.println(ratingsData);
@@ -136,4 +95,3 @@ extractedData.put("categoriesData", categoriesData);
 
 
 return extractedData;
-*/

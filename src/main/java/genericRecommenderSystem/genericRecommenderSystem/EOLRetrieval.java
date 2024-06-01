@@ -34,15 +34,9 @@ public class EOLRetrieval {
             Resource ecoreResourceDomain = resourceSetDomain.getResource(URI.createFileURI("src/main/Models/domain.ecore"), true);
             EPackage ePackageDomain = (EPackage) ecoreResourceDomain.getContents().get(0);
             EPackage.Registry.INSTANCE.put(ePackageDomain.getNsURI(), ePackageDomain);
-            
-            // Register the second Ecore file (domain.ecore)
-            ResourceSet resourceSetWeaving = new ResourceSetImpl();
-            Resource ecoreResourceWeaving = resourceSetWeaving.getResource(URI.createFileURI("src/main/Models/weaving.ecore"), true);
-            EPackage ePackageWeaving = (EPackage) ecoreResourceWeaving.getContents().get(0);
-            EPackage.Registry.INSTANCE.put(ePackageWeaving.getNsURI(), ePackageWeaving);
 
-            System.out.println("EPackage RS registered: " + EPackage.Registry.INSTANCE.get(ePackageRS.getNsURI()));
-            System.out.println("EPackage Domain registered: " + EPackage.Registry.INSTANCE.get(ePackageDomain.getNsURI()));
+            //System.out.println("EPackage RS registered: " + EPackage.Registry.INSTANCE.get(ePackageRS.getNsURI()));
+            //System.out.println("EPackage Domain registered: " + EPackage.Registry.INSTANCE.get(ePackageDomain.getNsURI()));
             //System.out.println("EPackage Weaving registered: " + EPackage.Registry.INSTANCE.get(ePackageWeaving.getNsURI()));
 
         } catch (Exception e) {
@@ -55,7 +49,7 @@ public class EOLRetrieval {
         IEolModule module = new EolModule();
 
         // Load your EOL script
-        File scriptFile = new File("src/main/Models/EOL_scripts/dataExtraction.eol");
+        File scriptFile = new File("src/main/Models/EOL_scripts/dataExtraction.eol").getAbsoluteFile();
         module.parse(scriptFile);
 
         // Ensure the script is parsed correctly
@@ -69,9 +63,9 @@ public class EOLRetrieval {
 
         // Load the EMF models
         List<IModel> models = new ArrayList<>();
-        models.add(loadEmfModel("recommendersystemModel", "src/main/Models/recommendersystemGeneric.model", "http://org.rs", true, false));
-        models.add(loadEmfModel("domain", "src/main/Models/domain.model", "http://org.rs.domain", true, false));
-        //models.add(loadEmfModel("weaving", "src/main/Models/weaving.model", "http://weaving", true, false));
+        //models.add(loadEmfModel("ecoreRoot", null, "http://www.eclipse.org/emf/2002/Ecore", null, false, false)); // Adjust the model path and other arguments as needed
+        models.add(loadEmfModel("recommendersystemModel", new File("src/main/Models/recommendersystemGeneric.model").getAbsolutePath(), "http://org.rs", "src/main/Models/recommendersystemGeneric.ecore", true, false));
+        models.add(loadEmfModel("domain", new File("src/main/Models/domain.model").getAbsolutePath(), "http://org.rs.domain", "src/main/Models/domain.ecore", true, false));
 
 
 
@@ -91,11 +85,14 @@ public class EOLRetrieval {
             model.dispose();
         }
     }
+    
+    
 
-    public static EmfModel loadEmfModel(String name, String modelPath, String metamodelUri, boolean readOnLoad, boolean storeOnDisposal) throws Exception {
+    public static EmfModel loadEmfModel(String name, String modelPath, String metamodelUri, String metamodelPath, boolean readOnLoad, boolean storeOnDisposal) throws Exception {
         EmfModel model = new EmfModel();
         model.setName(name);
         model.setMetamodelUri(metamodelUri);
+        model.setMetamodelFile(metamodelPath); 
         model.setModelFile(modelPath);
         model.setReadOnLoad(readOnLoad);
         model.setStoredOnDisposal(storeOnDisposal);
@@ -103,4 +100,5 @@ public class EOLRetrieval {
         model.load();
         return model;
     }
+
 }

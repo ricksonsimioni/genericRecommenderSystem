@@ -3,14 +3,14 @@ package rs;
 
 
 class User {
-	attr int _id;
+	attr int identification;
 }
 
-abstract class Preference {
+abstract class Preference extends User{
 	
 }
 
-abstract class Profile {
+abstract class Profile extends User{
 	
 }
 class CollaborativeFiltering extends FilteringRS {
@@ -49,7 +49,7 @@ abstract class FilteringRS {
 }
 
 abstract class Item {
-	attr int _id;
+	attr int identification;
 }
 
 enum SimilarityFunction {
