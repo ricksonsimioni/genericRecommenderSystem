@@ -5,37 +5,32 @@ var categoriesData = new Sequence();
 
 for (user in recommendersystemModel!User.allInstances()) {
     var userDetails = new Map();
+    
     userDetails.put("userId", user.identification); 
     userDetails.put("userName", user.name); 
+    
     userData.put(user.id, userDetails); 
 }
 
-
 for (Item in recommendersystemModel!Item.allInstances()) {
     var itemDetails = new Map();
+    
     itemDetails.put("itemId", Item.identification);
     itemDetails.put("itemName", Item.name);
     itemDetails.put("category", Item.category.category);
     
-
     itemData.put(Item.id, itemDetails);
 }
 
-
 for (userItemRow in recommendersystemModel!UserItemMatrix.all.first().rows) {
-    var userId = userItemRow._user.identification;
-    var itemId = userItemRow._item.identification;
-    var rating = userItemRow.value;
-
     var ratingData = new Map();
 
-    ratingData.put("userId", userId);
-    ratingData.put("itemId", itemId);
-    ratingData.put("rating", rating);
+    ratingData.put("userId", userItemRow._user.identification);
+    ratingData.put("itemId", userItemRow._item.identification);
+    ratingData.put("rating", userItemRow.value);
 
     ratingsData.add(ratingData);
 }
-
 
 for (ContentBasedPreference in recommendersystemModel!ContentBasedPreference.allInstances()) {
     var categoriesDetails = new Map();
@@ -43,8 +38,6 @@ for (ContentBasedPreference in recommendersystemModel!ContentBasedPreference.all
     categoriesDetails.put("userName", ContentBasedPreference._user.name);
    
     var prefs = ContentBasedPreference._prefs;
-    
-    // Create a list to hold preference details
     var prefsDetails = new Sequence();
     
     for (pref in prefs) {
@@ -65,33 +58,10 @@ for (ContentBasedPreference in recommendersystemModel!ContentBasedPreference.all
     categoriesData.add(categoriesDetails);
 }
 
-// Print the result to verify
-for (categoryDetail in categoriesData) {
-   // System.out.println("User ID: " + categoryDetail.get("userId"));
-  //  System.out.println("User Name: " + categoryDetail.get("userName"));
-    for (prefDetail in categoryDetail.get("prefs")) {
-        //System.out.println("Preferences:");
-        for (key in prefDetail.keySet()) {
-            //System.out.println("  " + key + " = " + prefDetail.get(key));
-        }
-    }
-}
-
-
-
-
-
 var extractedData = new Map();
 extractedData.put("userData", userData);
 extractedData.put("itemData", itemData);
 extractedData.put("ratingsData", ratingsData);
 extractedData.put("categoriesData", categoriesData);
-
-//System.out.println(extractedData);
-//System.out.println(userData);
-//System.out.println(itemData);
-//System.out.println(ratingsData);
-//System.out.println(categoriesData);
-
 
 return extractedData;

@@ -48,9 +48,9 @@
   <pois xsi:type="domain:Indoor" xmi:id="_WUxWIBRXEe-xqaUUKrsSng" identification="4" longitude="" category="_US620B9SEe-MJOXqr4RUeA" name="Centro Visita di Civitella Alfedena"/>
   <pois xsi:type="domain:Indoor" xmi:id="_TsCZUBRXEe-xqaUUKrsSng" identification="5" category="_T9h1oB9SEe-MJOXqr4RUeA" name="Centro Visita del Camoscio di Opi"/>
   <pois xsi:type="domain:Outdoor" xmi:id="_UBtuYBRXEe-xqaUUKrsSng" identification="6" category="_ThjrUB9SEe-MJOXqr4RUeA" name="Centro Visita di Pescasseroli"/>
-  <pois xsi:type="domain:Outdoor" xmi:id="_TY2XkBRXEe-xqaUUKrsSng" identification="7" longitude="" category="_Uv_0YB9SEe-MJOXqr4RUeA" name="Museo Oscar Caporaso di Castel San Vincenzo"/>
+  <pois xsi:type="domain:Outdoor" xmi:id="_TY2XkBRXEe-xqaUUKrsSng" identification="7" longitude="" category="_Uv_0YB9SEe-MJOXqr4RUeA" name="Museo Oscar Caporaso di Castel San Vincenzo;"/>
   <pois xsi:type="domain:Outdoor" xmi:id="_Ve7TQBRXEe-xqaUUKrsSng" identification="8" category="_UhHD0B9SEe-MJOXqr4RUeA" name="Centro Visita dell'Orso - Villavallelonga"/>
-  <pois xsi:type="domain:Outdoor" xmi:id="_WpJDoBRXEe-xqaUUKrsSng" identification="9" category="_US620B9SEe-MJOXqr4RUeA" name="Val Fondillo (Opi) - Valico Passaggio dell'Orso"/>
+  <pois xsi:type="domain:Outdoor" xmi:id="_WpJDoBRXEe-xqaUUKrsSng" identification="9" category="_US620B9SEe-MJOXqr4RUeA" name="Val Fondillo (Opi) - Valico Passaggio dell'Orso;"/>
   <pois xsi:type="domain:Outdoor" xmi:id="_VwPswBRXEe-xqaUUKrsSng" identification="10" category="_ThjrUB9SEe-MJOXqr4RUeA" name="Barrea - Lago Vivo"/>
   <categories xmi:id="_ThjrUB9SEe-MJOXqr4RUeA" identification="1"/>
   <categories xmi:id="_T9h1oB9SEe-MJOXqr4RUeA" identification="2" category="HIKING"/>

@@ -9,6 +9,7 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 import org.apache.mahout.cf.taste.impl.common.FastByIDMap;
+import org.apache.mahout.cf.taste.impl.common.LongPrimitiveIterator;
 import org.apache.mahout.cf.taste.impl.model.GenericDataModel;
 import org.apache.mahout.cf.taste.impl.model.GenericUserPreferenceArray;
 import org.apache.mahout.cf.taste.impl.neighborhood.NearestNUserNeighborhood;
@@ -67,7 +68,7 @@ public class Main {
                 for (IModel model : models) {
                     module.getContext().getModelRepository().addModel(model);
                 }
-
+                
                 Object result = module.execute();
 
                 for (IModel model : models) {
@@ -96,7 +97,7 @@ public class Main {
                     if (mahoutData != null) {
 					    DataModel model = new GenericDataModel(mahoutData);
 					    UserSimilarity similarity = new PearsonCorrelationSimilarity(model);
-					    UserNeighborhood neighborhood = new NearestNUserNeighborhood(3, similarity, model);
+					    UserNeighborhood neighborhood = new NearestNUserNeighborhood(5, similarity, model);
 					    GenericUserBasedRecommender recommender = new GenericUserBasedRecommender(model, neighborhood, similarity);
 					    try (Scanner scanner = new Scanner(System.in)) {
 					        System.out.print("Please enter the user ID for which you want recommendations: ");
@@ -109,15 +110,25 @@ public class Main {
 					        List<RecommendedItem> rerankedRecommendations = rerankRecommendations(recommendations, favoriteTOI, itemData);
 			
 					        System.out.println("Recommendations for user ID: " + userId);
-					        for (RecommendedItem recommendation : rerankedRecommendations) {
+					        for (RecommendedItem recommendation : recommendations) {
 					        	int itemId = (int) recommendation.getItemID();
-					            String poiName = (itemData.containsKey(itemId)) && itemData.get(itemId).containsKey("itemName") 
+					            String itemName = (itemData.containsKey(itemId)) && itemData.get(itemId).containsKey("itemName") 
 					                             ? itemData.get(itemId).get("itemName").toString() 
 					                             : "Unknown POI";
-					            System.out.println("Recommended POI: " + poiName + " - Score: " + recommendation.getValue());
+					            System.out.println("Recommended POI: " + itemName + "\nScore: " + recommendation.getValue());
+					        }
+					        
+					        System.out.println("Reranked Recommendations for user ID: " + userId);
+					        for (RecommendedItem recommendation : rerankedRecommendations) {
+					        	int itemId = (int) recommendation.getItemID();
+					            String itemName = (itemData.containsKey(itemId)) && itemData.get(itemId).containsKey("itemName") 
+					                             ? itemData.get(itemId).get("itemName").toString() 
+					                             : "Unknown POI";
+					            System.out.println("Recommended POI: " + itemName + "\nScore: " + recommendation.getValue());
 					        }
 					    }
 					}
+
                 }
 
             } catch (EolModelLoadingException e) {
