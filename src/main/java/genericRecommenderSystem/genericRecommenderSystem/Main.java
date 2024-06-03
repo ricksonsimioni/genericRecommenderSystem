@@ -100,7 +100,7 @@ public class Main {
                     if (mahoutData != null) {
 					    DataModel model = new GenericDataModel(mahoutData);
 					    UserSimilarity similarity = new PearsonCorrelationSimilarity(model);
-					    UserNeighborhood neighborhood = new NearestNUserNeighborhood(3, similarity, model);
+					    UserNeighborhood neighborhood = new NearestNUserNeighborhood(2, similarity, model);
 					    GenericUserBasedRecommender recommender = new GenericUserBasedRecommender(model, neighborhood, similarity);
 					    try (Scanner scanner = new Scanner(System.in)) {
 					        System.out.print("Please enter the user ID for which you want recommendations: ");
@@ -125,7 +125,7 @@ public class Main {
                     /*if (mahoutData != null) {
                         DataModel model = new GenericDataModel(mahoutData);
                         UserSimilarity similarity = new PearsonCorrelationSimilarity(model);
-                        UserNeighborhood neighborhood = new NearestNUserNeighborhood(3, similarity, model);
+                        UserNeighborhood neighborhood = new NearestNUserNeighborhood(2, similarity, model);
                         GenericUserBasedRecommender recommender = new GenericUserBasedRecommender(model, neighborhood, similarity);
 
                         LongPrimitiveIterator userIterator = model.getUserIDs();
@@ -154,7 +154,7 @@ public class Main {
                                                 : "Unknown item";
                                         System.out.println("Recommended item: " + itemName + "\nScore: " + recommendation.getValue());
                                     }
-                                }
+                                //}
                                 System.out.println();
                             }
                         }

@@ -1,0 +1,44 @@
+// Create new viewers
+var newViewers = Sequence{};
+
+var newViewer1 = new Viewer;
+newViewer1.name = "NewViewer1";
+newViewers.add(newViewer1);
+
+var newViewer2 = new Viewer;
+newViewer2.name = "NewViewer2";
+newViewers.add(newViewer2);
+
+var newViewer3 = new Viewer;
+newViewer3.name = "NewViewer3";
+newViewers.add(newViewer3);
+
+// Create new movies
+var newMovies = Sequence{};
+
+var newMovie1 = new Show;
+newMovie1.name = "NewMovie1";
+newMovies.add(newMovie1);
+
+var newMovie2 = new Show;
+newMovie2.name = "NewMovie2";
+newMovies.add(newMovie2);
+
+var newMovie3 = new Show;
+newMovie3.name = "NewMovie3";
+newMovies.add(newMovie3);
+
+// Add new viewers to the existing MovieDomain
+var existingMovieDomain = MovieDomain.allInstances()->first();
+
+for (viewer in newViewers) {
+    existingMovieDomain.viewers.add(viewer);
+}
+
+// Add new movies to the existing MovieDomain
+for (movie in newMovies) {
+    existingMovieDomain.movies.add(movie);
+}
+
+// Save changes to the model
+existingMovieDomain.eResource().save(null);
