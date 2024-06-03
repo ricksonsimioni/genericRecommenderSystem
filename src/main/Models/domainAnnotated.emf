@@ -5,7 +5,7 @@ package domain;
 class RSDomain {
 	val Tourist[*] tourist;
 	val Itinerary[+] itineraries;
-	attr String names;
+	attr String name;
 	val POI[*] pois;
 	val POICategory[*] categories;
 }

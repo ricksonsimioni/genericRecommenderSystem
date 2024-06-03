@@ -44,7 +44,7 @@ public class Main {
 
             ResourceSet resourceSetDomain = new ResourceSetImpl();
             resourceSetDomain.getResourceFactoryRegistry().getExtensionToFactoryMap().put("ecore", new EcoreResourceFactoryImpl());
-            Resource ecoreResourceDomain = resourceSetDomain.getResource(URI.createFileURI("src/main/Models/domain.ecore"), true);
+            Resource ecoreResourceDomain = resourceSetDomain.getResource(URI.createFileURI("src/main/Models/movieDomain.ecore"), true);
 
             EPackage ePackageRS = (EPackage) ecoreResourceTRS.getContents().get(0);
             EPackage ePackageDomain = (EPackage) ecoreResourceDomain.getContents().get(0);
@@ -63,8 +63,11 @@ public class Main {
             try {
                 List<IModel> models = new ArrayList<>();
                 
-                models.add(loadEmfModel("recommendersystemModel", new File("src/main/Models/recommendersystemGeneric.model").getAbsolutePath(), "http://org.rs", true, false));
-                models.add(loadEmfModel("domain", new File("src/main/Models/domain.model").getAbsolutePath(), "http://org.rs.domain", true, false));
+                //models.add(loadEmfModel("recommendersystemModel", new File("src/main/Models/recommendersystemGeneric.model").getAbsolutePath(), "http://org.rs", true, false));
+                //models.add(loadEmfModel("domain", new File("src/main/Models/domain.model").getAbsolutePath(), "http://org.rs.domain", true, false));
+                
+                models.add(loadEmfModel("recommendersystemModel", new File("src/main/Models/recommendersystemGenericMovie.model").getAbsolutePath(), "http://org.rs", true, false));
+                models.add(loadEmfModel("domain", new File("src/main/Models/domain.movie.model").getAbsolutePath(), "http://org.rs.domain.movie", true, false));
                 for (IModel model : models) {
                     module.getContext().getModelRepository().addModel(model);
                 }
@@ -75,12 +78,12 @@ public class Main {
                     model.dispose();
                 }
 
-                EEnum toiEnum = (EEnum) ePackageDomain.getEClassifier("Category");
-                List<String> toiValues = new ArrayList<>();
+                EEnum categoryEnum = (EEnum) ePackageDomain.getEClassifier("Category");
+                List<String> categoryValues = new ArrayList<>();
 
-                if (toiEnum != null && toiEnum.getELiterals() != null) {
-                    for (EEnumLiteral literal : toiEnum.getELiterals()) {
-                        toiValues.add(literal.getName());
+                if (categoryEnum != null && categoryEnum.getELiterals() != null) {
+                    for (EEnumLiteral literal : categoryEnum.getELiterals()) {
+                        categoryValues.add(literal.getName());
                     }
                 }
 
@@ -97,37 +100,65 @@ public class Main {
                     if (mahoutData != null) {
 					    DataModel model = new GenericDataModel(mahoutData);
 					    UserSimilarity similarity = new PearsonCorrelationSimilarity(model);
-					    UserNeighborhood neighborhood = new NearestNUserNeighborhood(5, similarity, model);
+					    UserNeighborhood neighborhood = new NearestNUserNeighborhood(3, similarity, model);
 					    GenericUserBasedRecommender recommender = new GenericUserBasedRecommender(model, neighborhood, similarity);
 					    try (Scanner scanner = new Scanner(System.in)) {
 					        System.out.print("Please enter the user ID for which you want recommendations: ");
 					        long userId = scanner.nextLong();
 					
-					        System.out.println("What's your favorite topic of interest?" + toiValues);
-					        String favoriteTOI = scanner.next();
+					        System.out.println("What's your favorite category?" + categoryValues);
+					        String favoriteCategory = scanner.next();
 					
-					        List<RecommendedItem> recommendations = recommender.recommend(userId, 10);
-					        List<RecommendedItem> rerankedRecommendations = rerankRecommendations(recommendations, favoriteTOI, itemData);
+					        List<RecommendedItem> recommendations = recommender.recommend(userId, 3);
+					        List<RecommendedItem> rerankedRecommendations = rerankRecommendations(recommendations, favoriteCategory, itemData);
 			
 					        System.out.println("Recommendations for user ID: " + userId);
-					        for (RecommendedItem recommendation : recommendations) {
-					        	int itemId = (int) recommendation.getItemID();
-					            String itemName = (itemData.containsKey(itemId)) && itemData.get(itemId).containsKey("itemName") 
-					                             ? itemData.get(itemId).get("itemName").toString() 
-					                             : "Unknown POI";
-					            System.out.println("Recommended POI: " + itemName + "\nScore: " + recommendation.getValue());
-					        }
-					        
-					        System.out.println("Reranked Recommendations for user ID: " + userId);
 					        for (RecommendedItem recommendation : rerankedRecommendations) {
 					        	int itemId = (int) recommendation.getItemID();
 					            String itemName = (itemData.containsKey(itemId)) && itemData.get(itemId).containsKey("itemName") 
 					                             ? itemData.get(itemId).get("itemName").toString() 
-					                             : "Unknown POI";
-					            System.out.println("Recommended POI: " + itemName + "\nScore: " + recommendation.getValue());
+					                             : "Unknown item";
+					            System.out.println("Recommended item: " + itemName + "\nScore: " + recommendation.getValue());
 					        }
 					    }
 					}
+                    /*if (mahoutData != null) {
+                        DataModel model = new GenericDataModel(mahoutData);
+                        UserSimilarity similarity = new PearsonCorrelationSimilarity(model);
+                        UserNeighborhood neighborhood = new NearestNUserNeighborhood(3, similarity, model);
+                        GenericUserBasedRecommender recommender = new GenericUserBasedRecommender(model, neighborhood, similarity);
+
+                        LongPrimitiveIterator userIterator = model.getUserIDs();
+
+                        while (userIterator.hasNext()) {
+                            long userId = userIterator.nextLong();
+                            for (String favoriteCategory : categoryValues) {
+                                List<RecommendedItem> recommendations = recommender.recommend(userId, 3);
+                                List<RecommendedItem> rerankedRecommendations = rerankRecommendations(recommendations, favoriteCategory, itemData);
+
+                                System.out.println("Recommendations for user ID: " + userId + " in category: " + favoriteCategory);
+                                if (rerankedRecommendations.isEmpty()) {
+                                    System.out.println("Sorry, no recommendation based on your preference was found, here is the recommendation based on your ratings:");
+                                    for (RecommendedItem recommendation : recommendations) {
+                                        int itemId = (int) recommendation.getItemID();
+                                        String itemName = (itemData.containsKey(itemId) && itemData.get(itemId).containsKey("itemName"))
+                                                ? itemData.get(itemId).get("itemName").toString()
+                                                : "Unknown item";
+                                        System.out.println("Recommended item: " + itemName + "\nScore: " + recommendation.getValue());
+                                    }
+                                } else {
+                                    for (RecommendedItem recommendation : rerankedRecommendations) {
+                                        int itemId = (int) recommendation.getItemID();
+                                        String itemName = (itemData.containsKey(itemId) && itemData.get(itemId).containsKey("itemName"))
+                                                ? itemData.get(itemId).get("itemName").toString()
+                                                : "Unknown item";
+                                        System.out.println("Recommended item: " + itemName + "\nScore: " + recommendation.getValue());
+                                    }
+                                }
+                                System.out.println();
+                            }
+                        }
+                    }*/
 
                 }
 

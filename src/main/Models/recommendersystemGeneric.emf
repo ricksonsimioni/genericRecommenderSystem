@@ -6,11 +6,15 @@ class User {
 	attr int identification;
 }
 
-abstract class Preference extends User{
+abstract class Item {
+	attr int identification;
+}
+
+abstract class Preference {
 	
 }
 
-abstract class Profile extends User{
+abstract class Profile {
 	
 }
 class CollaborativeFiltering extends FilteringRS {
@@ -46,10 +50,6 @@ class HybridBased extends FilteringRS {
 abstract class FilteringRS {
 	attr String _name;
 	attr SimilarityFunction similarityFunction;
-}
-
-abstract class Item {
-	attr int identification;
 }
 
 enum SimilarityFunction {

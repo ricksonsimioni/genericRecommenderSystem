@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.rs:Algorithm xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:domainMovie="http://org.rs.domain.movie" xmlns:org.rs="http://org.rs" xmi:id="_SWHPICEDEe-kdKBnMBYA1g" name="MovieLens">
+  <filteringRS xsi:type="org.rs:HybridBased" xmi:id="_aV7lYCEDEe-kdKBnMBYA1g">
+    <_cfComponent xmi:id="_bTnVoCEDEe-kdKBnMBYA1g">
+      <data xmi:id="_T8G8ICF9Ee-kdKBnMBYA1g">
+        <rows xmi:id="_UOgTsCF9Ee-kdKBnMBYA1g" value="4.6">
+          <_user href="domain.movie.model#_7kYqsCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Series" href="domain.movie.model#_qAtGoCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_UfnR0CF9Ee-kdKBnMBYA1g" value="4.7">
+          <_user href="domain.movie.model#_7kYqsCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Series" href="domain.movie.model#_quMewCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_U70ssCF9Ee-kdKBnMBYA1g" value="3.9">
+          <_user href="domain.movie.model#_7kYqsCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Series" href="domain.movie.model#_rP9IACF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_VS36wCF9Ee-kdKBnMBYA1g" value="5.0">
+          <_user href="domain.movie.model#_7kYqsCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Movie" href="domain.movie.model#_oH7AECF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_V4YbkCF9Ee-kdKBnMBYA1g" value="4.5">
+          <_user href="domain.movie.model#_8OxEcCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Series" href="domain.movie.model#_qa-AwCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_WFhfsCF9Ee-kdKBnMBYA1g" value="4.0">
+          <_user href="domain.movie.model#_8OxEcCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Movie" href="domain.movie.model#_pofa8CF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_WUIjcCF9Ee-kdKBnMBYA1g" value="3.9">
+          <_user href="domain.movie.model#_8OxEcCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Series" href="domain.movie.model#_q9iiUCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_WkLKkCF9Ee-kdKBnMBYA1g" value="4.2">
+          <_user href="domain.movie.model#_8OxEcCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Series" href="domain.movie.model#_rftbQCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_VkCjQCF9Ee-kdKBnMBYA1g" value="4.6">
+          <_user href="domain.movie.model#_88iJYCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Movie" href="domain.movie.model#_oknjICF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_XSm94CF9Ee-kdKBnMBYA1g" value="4.5">
+          <_user href="domain.movie.model#_88iJYCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Movie" href="domain.movie.model#_pQa5MCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_XfIW8CF9Ee-kdKBnMBYA1g" value="4.3">
+          <_user href="domain.movie.model#_88iJYCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Movie" href="domain.movie.model#_pCULwCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_Xsv8MCF9Ee-kdKBnMBYA1g" value="5.0">
+          <_user href="domain.movie.model#_88iJYCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Series" href="domain.movie.model#_rftbQCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_X6fdQCF9Ee-kdKBnMBYA1g" value="5.0">
+          <_user href="domain.movie.model#_9UhyoCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Series" href="domain.movie.model#_q9iiUCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_XCoBICF9Ee-kdKBnMBYA1g" value="3.8">
+          <_user href="domain.movie.model#_9UhyoCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Series" href="domain.movie.model#_rP9IACF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_YUfRoCF9Ee-kdKBnMBYA1g" value="4.7">
+          <_user href="domain.movie.model#_9UhyoCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Series" href="domain.movie.model#_quMewCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_YhBRwCF9Ee-kdKBnMBYA1g" value="4.0">
+          <_user href="domain.movie.model#_9UhyoCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Movie" href="domain.movie.model#_pCULwCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_f34xoCF9Ee-kdKBnMBYA1g" value="4.2">
+          <_user href="domain.movie.model#_94KrMCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Movie" href="domain.movie.model#_o01wcCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_kg9OgCF9Ee-kdKBnMBYA1g" value="4.9">
+          <_user href="domain.movie.model#_94KrMCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Movie" href="domain.movie.model#_oknjICF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_kWN-ICF9Ee-kdKBnMBYA1g" value="4.8">
+          <_user href="domain.movie.model#_94KrMCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Series" href="domain.movie.model#_q9iiUCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_kBay0CF9Ee-kdKBnMBYA1g" value="3.7">
+          <_user href="domain.movie.model#_94KrMCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Movie" href="domain.movie.model#_pQa5MCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_jzBKcCF9Ee-kdKBnMBYA1g" value="4.7">
+          <_user href="domain.movie.model#_9mu88CF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Series" href="domain.movie.model#_qAtGoCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_joiYwCF9Ee-kdKBnMBYA1g" value="4.6">
+          <_user href="domain.movie.model#_9mu88CF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Movie" href="domain.movie.model#_pofa8CF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_jZgeQCF9Ee-kdKBnMBYA1g" value="5.0">
+          <_user href="domain.movie.model#_9mu88CF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Series" href="domain.movie.model#_qa-AwCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_jK-6ECF9Ee-kdKBnMBYA1g" value="4.3">
+          <_user href="domain.movie.model#_9mu88CF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Movie" href="domain.movie.model#_pQa5MCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_i_ElACF9Ee-kdKBnMBYA1g" value="4.5">
+          <_user href="domain.movie.model#_8m_XMCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Series" href="domain.movie.model#_q9iiUCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_idI8oCF9Ee-kdKBnMBYA1g" value="4.0">
+          <_user href="domain.movie.model#_8m_XMCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Movie" href="domain.movie.model#_pCULwCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_iRLkQCF9Ee-kdKBnMBYA1g" value="4.2">
+          <_user href="domain.movie.model#_8m_XMCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Series" href="domain.movie.model#_rP9IACF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_iGtZoCF9Ee-kdKBnMBYA1g" value="5.0">
+          <_user href="domain.movie.model#_8m_XMCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Movie" href="domain.movie.model#_oH7AECF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_h67ncCF9Ee-kdKBnMBYA1g" value="4.5">
+          <_user href="domain.movie.model#_-NKDwCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Series" href="domain.movie.model#_qa-AwCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_hsSHcCF9Ee-kdKBnMBYA1g" value="4.6">
+          <_user href="domain.movie.model#_-NKDwCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Movie" href="domain.movie.model#_o01wcCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_hh7RkCF9Ee-kdKBnMBYA1g" value="4.2">
+          <_user href="domain.movie.model#_-NKDwCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Movie" href="domain.movie.model#_pofa8CF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_hWalICF9Ee-kdKBnMBYA1g" value="4.0">
+          <_user href="domain.movie.model#_-NKDwCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Movie" href="domain.movie.model#_oknjICF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_g9Na8CF9Ee-kdKBnMBYA1g" value="4.2">
+          <_user href="domain.movie.model#__S3HkCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Series" href="domain.movie.model#_qa-AwCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_gN3BoCF9Ee-kdKBnMBYA1g" value="3.8">
+          <_user href="domain.movie.model#__S3HkCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Series" href="domain.movie.model#_rftbQCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_gwf0oCF9Ee-kdKBnMBYA1g" value="3.7">
+          <_user href="domain.movie.model#__S3HkCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Series" href="domain.movie.model#_quMewCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_gcxAUCF9Ee-kdKBnMBYA1g" value="4.0">
+          <_user href="domain.movie.model#__S3HkCF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Series" href="domain.movie.model#_qAtGoCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_gCZYgCF9Ee-kdKBnMBYA1g" value="4.3">
+          <_user href="domain.movie.model#__nPcICF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Series" href="domain.movie.model#_quMewCF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_fq3pUCF9Ee-kdKBnMBYA1g" value="4.5">
+          <_user href="domain.movie.model#__nPcICF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Movie" href="domain.movie.model#_pofa8CF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_Yx60gCF9Ee-kdKBnMBYA1g" value="4.2">
+          <_user href="domain.movie.model#__nPcICF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Movie" href="domain.movie.model#_oH7AECF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_fFhgkCF9Ee-kdKBnMBYA1g" value="4.8">
+          <_user href="domain.movie.model#__nPcICF5Ee-kdKBnMBYA1g"/>
+          <_item xsi:type="domainMovie:Series" href="domain.movie.model#_rP9IACF7Ee-kdKBnMBYA1g"/>
+        </rows>
+        <rows xmi:id="_fTBKACF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_ewTegCF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_TWEaYCF-Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_SyLDICF-Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_e7IOcCF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_elk1MCF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_SmXbwCF-Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_eZW-ICF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_eKTOcCF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_d42SECF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_bLgiECF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_dsGPgCF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_demmECF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_dRGVkCF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_b5KSQCF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_dBtOsCF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_cs2ZACF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_cdhjkCF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_cNxQUCF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_aOIT0CF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_belPECF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_a6x-cCF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_arSw8CF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_Zehb0CF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_adj28CF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_aAL-cCF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_ZPdFECF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_YH3K4CF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_Zx3OkCF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_ZA0MICF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_UvIUgCF9Ee-kdKBnMBYA1g"/>
+        <rows xmi:id="_WyViYCF9Ee-kdKBnMBYA1g"/>
+
+      </data>
+    </_cfComponent>
+    <_cbComponent xmi:id="_anugACEDEe-kdKBnMBYA1g">
+      <contentBasedPreference xmi:id="_a4pQ4CEDEe-kdKBnMBYA1g">
+        <_user href="domain.movie.model#_7kYqsCF5Ee-kdKBnMBYA1g"/>
+        <_prefs xsi:type="domainMovie:ShowCategory" href="domain.movie.model#_Z8HXMCEDEe-kdKBnMBYA1g"/>
+      </contentBasedPreference>
+      <contentBasedPreference xmi:id="_UkMaYCF-Ee-kdKBnMBYA1g">
+        <_user href="domain.movie.model#_8OxEcCF5Ee-kdKBnMBYA1g"/>
+        <_prefs xsi:type="domainMovie:ShowCategory" href="domain.movie.model#_3jxU8CF5Ee-kdKBnMBYA1g"/>
+      </contentBasedPreference>
+      <contentBasedPreference xmi:id="_U3BPwCF-Ee-kdKBnMBYA1g">
+        <_user href="domain.movie.model#_88iJYCF5Ee-kdKBnMBYA1g"/>
+        <_prefs xsi:type="domainMovie:ShowCategory" href="domain.movie.model#_4X5gkCF5Ee-kdKBnMBYA1g"/>
+      </contentBasedPreference>
+      <contentBasedPreference xmi:id="_UH1OgCF-Ee-kdKBnMBYA1g">
+        <_user href="domain.movie.model#_9UhyoCF5Ee-kdKBnMBYA1g"/>
+        <_prefs xsi:type="domainMovie:ShowCategory" href="domain.movie.model#_5P-YECF5Ee-kdKBnMBYA1g"/>
+      </contentBasedPreference>
+      <contentBasedPreference xmi:id="_VOsI4CF-Ee-kdKBnMBYA1g">
+        <_user href="domain.movie.model#_94KrMCF5Ee-kdKBnMBYA1g"/>
+        <_prefs xsi:type="domainMovie:ShowCategory" href="domain.movie.model#_57VCMCF5Ee-kdKBnMBYA1g"/>
+      </contentBasedPreference>
+      <contentBasedPreference xmi:id="_VDzHgCF-Ee-kdKBnMBYA1g">
+        <_user href="domain.movie.model#_9mu88CF5Ee-kdKBnMBYA1g"/>
+        <_prefs xsi:type="domainMovie:ShowCategory" href="domain.movie.model#_57VCMCF5Ee-kdKBnMBYA1g"/>
+      </contentBasedPreference>
+      <contentBasedPreference xmi:id="_VxO1QCF-Ee-kdKBnMBYA1g">
+        <_user href="domain.movie.model#_8m_XMCF5Ee-kdKBnMBYA1g"/>
+        <_prefs xsi:type="domainMovie:ShowCategory" href="domain.movie.model#_5P-YECF5Ee-kdKBnMBYA1g"/>
+      </contentBasedPreference>
+      <contentBasedPreference xmi:id="_WIzAsCF-Ee-kdKBnMBYA1g">
+        <_user href="domain.movie.model#_-NKDwCF5Ee-kdKBnMBYA1g"/>
+        <_prefs xsi:type="domainMovie:ShowCategory" href="domain.movie.model#_4X5gkCF5Ee-kdKBnMBYA1g"/>
+      </contentBasedPreference>
+      <contentBasedPreference xmi:id="_WeOeICF-Ee-kdKBnMBYA1g">
+        <_user href="domain.movie.model#__S3HkCF5Ee-kdKBnMBYA1g"/>
+        <_prefs xsi:type="domainMovie:ShowCategory" href="domain.movie.model#_3jxU8CF5Ee-kdKBnMBYA1g"/>
+      </contentBasedPreference>
+      <contentBasedPreference xmi:id="_WTcKcCF-Ee-kdKBnMBYA1g">
+        <_user href="domain.movie.model#__nPcICF5Ee-kdKBnMBYA1g"/>
+        <_prefs xsi:type="domainMovie:ShowCategory" href="domain.movie.model#_Z8HXMCEDEe-kdKBnMBYA1g"/>
+      </contentBasedPreference>
+    </_cbComponent>
+  </filteringRS>
+</org.rs:Algorithm>

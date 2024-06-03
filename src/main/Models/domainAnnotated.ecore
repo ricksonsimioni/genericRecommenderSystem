@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="domain" nsURI="http://org.trs.domain" nsPrefix="domain">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="domain" nsURI="http://org.rs.domain" nsPrefix="domain">
+  <eClassifiers xsi:type="ecore:EClass" name="RSDomain">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tourist" upperBound="-1"
+        eType="#//Tourist" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="itineraries" lowerBound="1"
+        upperBound="-1" eType="#//Itinerary" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pois" upperBound="-1" eType="#//POI"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="categories" upperBound="-1"
+        eType="#//POICategory" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="POI" abstract="true">
     <eAnnotations source="item"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="topicOfInterest" eType="#//TopicOfInterest">
-      <eAnnotations source="contentBasedPreference"/>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="category" eType="#//POICategory"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="latitude" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="longitude" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -30,6 +39,10 @@
       <eAnnotations source="preference"/>
     </eStructuralFeatures>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="POICategory">
+    <eAnnotations source="preference"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="#//Category"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Tourist">
     <eAnnotations source="user"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -51,16 +64,7 @@
     <eLiterals name="WALK" value="2"/>
     <eLiterals name="PUBLIC" value="3"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TRSDomain">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tourist" upperBound="-1"
-        eType="#//Tourist" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="itineraries" lowerBound="1"
-        upperBound="-1" eType="#//Itinerary" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pois" upperBound="-1" eType="#//POI"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="TopicOfInterest">
+  <eClassifiers xsi:type="ecore:EEnum" name="Category">
     <eLiterals name="ART"/>
     <eLiterals name="HIKING" value="1"/>
     <eLiterals name="RELIGION" value="2"/>

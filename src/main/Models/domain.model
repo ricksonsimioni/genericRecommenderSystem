@@ -42,19 +42,19 @@
   </tourist>
   <itineraries xmi:id="_XIi8cBRXEe-xqaUUKrsSng" identification="11" category="_Uv_0YB9SEe-MJOXqr4RUeA" pois="_S2sswBRXEe-xqaUUKrsSng _VI2VkBRXEe-xqaUUKrsSng _U5Bw4BRXEe-xqaUUKrsSng _WUxWIBRXEe-xqaUUKrsSng _TsCZUBRXEe-xqaUUKrsSng" name="Indoor"/>
   <itineraries xmi:id="_XfGbQBRXEe-xqaUUKrsSng" identification="12" category="_UhHD0B9SEe-MJOXqr4RUeA" pois="_UBtuYBRXEe-xqaUUKrsSng _TY2XkBRXEe-xqaUUKrsSng _VwPswBRXEe-xqaUUKrsSng _WpJDoBRXEe-xqaUUKrsSng _Ve7TQBRXEe-xqaUUKrsSng" name="Outdoor"/>
-  <pois xsi:type="domain:Indoor" xmi:id="_S2sswBRXEe-xqaUUKrsSng" identification="1" category="_US620B9SEe-MJOXqr4RUeA" name="Centro Visita Insecta: la vita a sei zampe"/>
-  <pois xsi:type="domain:Indoor" xmi:id="_VI2VkBRXEe-xqaUUKrsSng" identification="2" category="_Uv_0YB9SEe-MJOXqr4RUeA" name="Museo Civico Archeologico Antonio De Nino"/>
-  <pois xsi:type="domain:Indoor" xmi:id="_U5Bw4BRXEe-xqaUUKrsSng" identification="3" category="_UhHD0B9SEe-MJOXqr4RUeA" name="Museo Storico del Parco Nazionale d'Abruzzo, Lazio e Molise" openingHours=""/>
-  <pois xsi:type="domain:Indoor" xmi:id="_WUxWIBRXEe-xqaUUKrsSng" identification="4" longitude="" category="_US620B9SEe-MJOXqr4RUeA" name="Centro Visita di Civitella Alfedena"/>
+  <pois xsi:type="domain:Indoor" xmi:id="_S2sswBRXEe-xqaUUKrsSng" identification="1" category="_US620B9SEe-MJOXqr4RUeA _UhHD0B9SEe-MJOXqr4RUeA" name="Centro Visita Insecta: la vita a sei zampe"/>
+  <pois xsi:type="domain:Indoor" xmi:id="_VI2VkBRXEe-xqaUUKrsSng" identification="2" category="_Uv_0YB9SEe-MJOXqr4RUeA _US620B9SEe-MJOXqr4RUeA" name="Museo Civico Archeologico Antonio De Nino"/>
+  <pois xsi:type="domain:Indoor" xmi:id="_U5Bw4BRXEe-xqaUUKrsSng" identification="3" category="_UhHD0B9SEe-MJOXqr4RUeA _US620B9SEe-MJOXqr4RUeA" name="Museo Storico del Parco Nazionale d'Abruzzo, Lazio e Molise" openingHours=""/>
+  <pois xsi:type="domain:Indoor" xmi:id="_WUxWIBRXEe-xqaUUKrsSng" identification="4" longitude="" category="_US620B9SEe-MJOXqr4RUeA _UhHD0B9SEe-MJOXqr4RUeA" name="Centro Visita di Civitella Alfedena"/>
   <pois xsi:type="domain:Indoor" xmi:id="_TsCZUBRXEe-xqaUUKrsSng" identification="5" category="_T9h1oB9SEe-MJOXqr4RUeA" name="Centro Visita del Camoscio di Opi"/>
   <pois xsi:type="domain:Outdoor" xmi:id="_UBtuYBRXEe-xqaUUKrsSng" identification="6" category="_ThjrUB9SEe-MJOXqr4RUeA" name="Centro Visita di Pescasseroli"/>
   <pois xsi:type="domain:Outdoor" xmi:id="_TY2XkBRXEe-xqaUUKrsSng" identification="7" longitude="" category="_Uv_0YB9SEe-MJOXqr4RUeA" name="Museo Oscar Caporaso di Castel San Vincenzo;"/>
-  <pois xsi:type="domain:Outdoor" xmi:id="_Ve7TQBRXEe-xqaUUKrsSng" identification="8" category="_UhHD0B9SEe-MJOXqr4RUeA" name="Centro Visita dell'Orso - Villavallelonga"/>
-  <pois xsi:type="domain:Outdoor" xmi:id="_WpJDoBRXEe-xqaUUKrsSng" identification="9" category="_US620B9SEe-MJOXqr4RUeA" name="Val Fondillo (Opi) - Valico Passaggio dell'Orso;"/>
-  <pois xsi:type="domain:Outdoor" xmi:id="_VwPswBRXEe-xqaUUKrsSng" identification="10" category="_ThjrUB9SEe-MJOXqr4RUeA" name="Barrea - Lago Vivo"/>
-  <categories xmi:id="_ThjrUB9SEe-MJOXqr4RUeA" identification="1"/>
-  <categories xmi:id="_T9h1oB9SEe-MJOXqr4RUeA" identification="2" category="HIKING"/>
-  <categories xmi:id="_US620B9SEe-MJOXqr4RUeA" identification="3" category="HISTORY"/>
-  <categories xmi:id="_UhHD0B9SEe-MJOXqr4RUeA" identification="4" category="NATURE"/>
-  <categories xmi:id="_Uv_0YB9SEe-MJOXqr4RUeA" identification="5" category="RELIGION"/>
+  <pois xsi:type="domain:Outdoor" xmi:id="_Ve7TQBRXEe-xqaUUKrsSng" identification="8" category="_UhHD0B9SEe-MJOXqr4RUeA _Uv_0YB9SEe-MJOXqr4RUeA" name="Centro Visita dell'Orso - Villavallelonga"/>
+  <pois xsi:type="domain:Outdoor" xmi:id="_WpJDoBRXEe-xqaUUKrsSng" identification="9" category="_US620B9SEe-MJOXqr4RUeA _UhHD0B9SEe-MJOXqr4RUeA" name="Val Fondillo (Opi) - Valico Passaggio dell'Orso;"/>
+  <pois xsi:type="domain:Outdoor" xmi:id="_VwPswBRXEe-xqaUUKrsSng" identification="10" category="_ThjrUB9SEe-MJOXqr4RUeA _T9h1oB9SEe-MJOXqr4RUeA" name="Barrea - Lago Vivo"/>
+  <categories xmi:id="_T9h1oB9SEe-MJOXqr4RUeA" category="HIKING"/>
+  <categories xmi:id="_ThjrUB9SEe-MJOXqr4RUeA"/>
+  <categories xmi:id="_US620B9SEe-MJOXqr4RUeA" category="HISTORY"/>
+  <categories xmi:id="_UhHD0B9SEe-MJOXqr4RUeA" category="NATURE"/>
+  <categories xmi:id="_Uv_0YB9SEe-MJOXqr4RUeA" category="RELIGION"/>
 </domain:RSDomain>

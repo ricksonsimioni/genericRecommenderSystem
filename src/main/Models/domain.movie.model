@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="ASCII"?>
-<domain:MovieDomain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://org.rs.domain.movie" xmi:id="_eNsmUBwPEe-MJOXqr4RUeA">
-  <watcher xmi:id="_j9bwUBwPEe-MJOXqr4RUeA" name="Mario">
-    <watcherPreference xmi:id="_lLpP4BwPEe-MJOXqr4RUeA"/>
-    <watcherProfile xmi:id="_lc-QcBwPEe-MJOXqr4RUeA"/>
-  </watcher>
-  <series xmi:id="_nvxZgBwPEe-MJOXqr4RUeA" category="_geI-8BwPEe-MJOXqr4RUeA"/>
-  <movies xmi:id="_muZcEBwPEe-MJOXqr4RUeA"/>
-  <categories xmi:id="_foE5oBwPEe-MJOXqr4RUeA"/>
-  <categories xmi:id="_gFXSkBwPEe-MJOXqr4RUeA" category="COMEDY"/>
-  <categories xmi:id="_geI-8BwPEe-MJOXqr4RUeA" category="DOCUMENTARY"/>
-  <categories xmi:id="_g5DZUBwPEe-MJOXqr4RUeA" category="DRAMA"/>
-  <categories xmi:id="_greQUBwPEe-MJOXqr4RUeA" category="HORROR"/>
-</domain:MovieDomain>
+<domainMovie:MovieDomain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:domainMovie="http://org.rs.domain.movie" xmi:id="_SV07QCEDEe-kdKBnMBYA1g" name="Flix">
+  <Viewer xmi:id="_7kYqsCF5Ee-kdKBnMBYA1g" identification="1" name="Pietro"/>
+  <Viewer xmi:id="_8OxEcCF5Ee-kdKBnMBYA1g" identification="2" name="Maria"/>
+  <Viewer xmi:id="_88iJYCF5Ee-kdKBnMBYA1g" identification="3" name="Luca"/>
+  <Viewer xmi:id="_9UhyoCF5Ee-kdKBnMBYA1g" identification="4" name="Anna"/>
+  <Viewer xmi:id="_94KrMCF5Ee-kdKBnMBYA1g" identification="5" name="Giulia"/>
+  <Viewer xmi:id="_9mu88CF5Ee-kdKBnMBYA1g" identification="6" name="Marco"/>
+  <Viewer xmi:id="_8m_XMCF5Ee-kdKBnMBYA1g" identification="7" name="Sofia"/>
+  <Viewer xmi:id="_-NKDwCF5Ee-kdKBnMBYA1g" identification="8" name="Davide"/>
+  <Viewer xmi:id="__S3HkCF5Ee-kdKBnMBYA1g" identification="9" name="Chiara"/>
+  <Viewer xmi:id="__nPcICF5Ee-kdKBnMBYA1g" identification="10" name="Federico"/>
+  <series xmi:id="_qAtGoCF7Ee-kdKBnMBYA1g" identification="1" category="_3jxU8CF5Ee-kdKBnMBYA1g" name="Brooklyn 99"/>
+  <series xmi:id="_qa-AwCF7Ee-kdKBnMBYA1g" identification="2" category="_Z8HXMCEDEe-kdKBnMBYA1g" name="Breaking Bad"/>
+  <series xmi:id="_quMewCF7Ee-kdKBnMBYA1g" identification="3" category="_5P-YECF5Ee-kdKBnMBYA1g" name="Dr. House"/>
+  <series xmi:id="_q9iiUCF7Ee-kdKBnMBYA1g" identification="4" category="_5P-YECF5Ee-kdKBnMBYA1g" name="Mind Hunter"/>
+  <series xmi:id="_rP9IACF7Ee-kdKBnMBYA1g" identification="5" category="_57VCMCF5Ee-kdKBnMBYA1g" name="The Haunting of Hill House"/>
+  <series xmi:id="_rftbQCF7Ee-kdKBnMBYA1g" identification="6" category="_4X5gkCF5Ee-kdKBnMBYA1g" name="Genius"/>
+  <movies xmi:id="_oH7AECF7Ee-kdKBnMBYA1g" identification="7" category="_Z8HXMCEDEe-kdKBnMBYA1g" name="Pulp Fiction"/>
+  <movies xmi:id="_oknjICF7Ee-kdKBnMBYA1g" identification="8" category="_5P-YECF5Ee-kdKBnMBYA1g" name="About Time"/>
+  <movies xmi:id="_o01wcCF7Ee-kdKBnMBYA1g" identification="9" category="_4X5gkCF5Ee-kdKBnMBYA1g" name="Senna"/>
+  <movies xmi:id="_pQa5MCF7Ee-kdKBnMBYA1g" identification="10" category="_57VCMCF5Ee-kdKBnMBYA1g" name="Annabelle"/>
+  <movies xmi:id="_pCULwCF7Ee-kdKBnMBYA1g" identification="11" pg="4" category="_3jxU8CF5Ee-kdKBnMBYA1g" name="Superbad"/>
+  <movies xmi:id="_pofa8CF7Ee-kdKBnMBYA1g" identification="12" category="_Z8HXMCEDEe-kdKBnMBYA1g" name="Fury"/>
+  <categories xmi:id="_Z8HXMCEDEe-kdKBnMBYA1g"/>
+  <categories xmi:id="_3jxU8CF5Ee-kdKBnMBYA1g" category="COMEDY"/>
+  <categories xmi:id="_4X5gkCF5Ee-kdKBnMBYA1g" category="DOCUMENTARY"/>
+  <categories xmi:id="_5P-YECF5Ee-kdKBnMBYA1g" category="DRAMA"/>
+  <categories xmi:id="_57VCMCF5Ee-kdKBnMBYA1g" category="HORROR"/>
+</domainMovie:MovieDomain>
