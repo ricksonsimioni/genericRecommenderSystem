@@ -56,7 +56,7 @@ class Tourist extends rs.User {
 
 
 class Itinerary extends rs.Item {
-	ref POICategory category; 
+	ref POICategory[*] category; 
 	attr TransportationMode transportationMode;
 	ref POI[*] pois;
 	attr String name;
