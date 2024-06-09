@@ -40,8 +40,18 @@
     <touristPreference xmi:id="_q8b8sBRiEe-xqaUUKrsSng"/>
     <touristProfile xmi:id="_qmwAkBRiEe-xqaUUKrsSng" gender="FEMALE"/>
   </tourist>
+  <tourist xmi:id="_9zJlMCMiEe-kdKBnMBYA1g" identification="11" name="Benjamin"/>
+  <tourist xmi:id="_-QDjoCMiEe-kdKBnMBYA1g" identification="12" name="James"/>
+  <tourist xmi:id="_-tOn0CMiEe-kdKBnMBYA1g" identification="13" name="Mia"/>
+  <tourist xmi:id="__DaTMCMiEe-kdKBnMBYA1g" identification="14" name="Alexander"/>
+  <tourist xmi:id="__W2MkCMiEe-kdKBnMBYA1g" identification="15" name="William"/>
+  <tourist xmi:id="_AXysMCMjEe-kdKBnMBYA1g" identification="16" name="Harper"/>
+  <tourist xmi:id="_Ap-oYCMjEe-kdKBnMBYA1g" identification="17" name="Valquiria"/>
+  <tourist xmi:id="_ADZwkCMjEe-kdKBnMBYA1g" identification="18" name="Cecilia"/>
+  <tourist xmi:id="_A-HFUCMjEe-kdKBnMBYA1g" identification="19" name="Marcello"/>
+  <tourist xmi:id="_B-BDICMjEe-kdKBnMBYA1g" identification="20" name="Cecilia"/>
   <itineraries xmi:id="_XIi8cBRXEe-xqaUUKrsSng" identification="11" category="_Uv_0YB9SEe-MJOXqr4RUeA" pois="_S2sswBRXEe-xqaUUKrsSng _VI2VkBRXEe-xqaUUKrsSng _U5Bw4BRXEe-xqaUUKrsSng _WUxWIBRXEe-xqaUUKrsSng _TsCZUBRXEe-xqaUUKrsSng" name="Indoor"/>
-  <itineraries xmi:id="_XfGbQBRXEe-xqaUUKrsSng" identification="12" category="_UhHD0B9SEe-MJOXqr4RUeA" pois="_UBtuYBRXEe-xqaUUKrsSng _TY2XkBRXEe-xqaUUKrsSng _VwPswBRXEe-xqaUUKrsSng _WpJDoBRXEe-xqaUUKrsSng _Ve7TQBRXEe-xqaUUKrsSng" name="Outdoor"/>
+  <itineraries xmi:id="_XfGbQBRXEe-xqaUUKrsSng" identification="12" category="_US620B9SEe-MJOXqr4RUeA" pois="_UBtuYBRXEe-xqaUUKrsSng _TY2XkBRXEe-xqaUUKrsSng _VwPswBRXEe-xqaUUKrsSng _WpJDoBRXEe-xqaUUKrsSng _Ve7TQBRXEe-xqaUUKrsSng" name="Outdoor"/>
   <pois xsi:type="domain:Indoor" xmi:id="_S2sswBRXEe-xqaUUKrsSng" identification="1" category="_US620B9SEe-MJOXqr4RUeA _UhHD0B9SEe-MJOXqr4RUeA" name="Centro Visita Insecta: la vita a sei zampe"/>
   <pois xsi:type="domain:Indoor" xmi:id="_VI2VkBRXEe-xqaUUKrsSng" identification="2" category="_Uv_0YB9SEe-MJOXqr4RUeA _US620B9SEe-MJOXqr4RUeA" name="Museo Civico Archeologico Antonio De Nino"/>
   <pois xsi:type="domain:Indoor" xmi:id="_U5Bw4BRXEe-xqaUUKrsSng" identification="3" category="_UhHD0B9SEe-MJOXqr4RUeA _US620B9SEe-MJOXqr4RUeA" name="Museo Storico del Parco Nazionale d'Abruzzo, Lazio e Molise" openingHours=""/>
@@ -52,6 +62,16 @@
   <pois xsi:type="domain:Outdoor" xmi:id="_Ve7TQBRXEe-xqaUUKrsSng" identification="8" category="_UhHD0B9SEe-MJOXqr4RUeA _Uv_0YB9SEe-MJOXqr4RUeA" name="Centro Visita dell'Orso - Villavallelonga"/>
   <pois xsi:type="domain:Outdoor" xmi:id="_WpJDoBRXEe-xqaUUKrsSng" identification="9" category="_US620B9SEe-MJOXqr4RUeA _UhHD0B9SEe-MJOXqr4RUeA" name="Val Fondillo (Opi) - Valico Passaggio dell'Orso;"/>
   <pois xsi:type="domain:Outdoor" xmi:id="_VwPswBRXEe-xqaUUKrsSng" identification="10" category="_ThjrUB9SEe-MJOXqr4RUeA _T9h1oB9SEe-MJOXqr4RUeA" name="Barrea - Lago Vivo"/>
+  <pois xsi:type="domain:Indoor" xmi:id="_CtVnQCMjEe-kdKBnMBYA1g" identification="11" category="_US620B9SEe-MJOXqr4RUeA" name="Chiesa di Monte Tranquillo"/>
+  <pois xsi:type="domain:Indoor" xmi:id="_DoSzoCMjEe-kdKBnMBYA1g" identification="12" latitude="" category="_US620B9SEe-MJOXqr4RUeA" name="Museo della Transumanza di Villetta Barrea&#xA;" capacity=""/>
+  <pois xsi:type="domain:Indoor" xmi:id="_D9pYkCMjEe-kdKBnMBYA1g" identification="13" category="_ThjrUB9SEe-MJOXqr4RUeA" name="Museo Internazionale della Zampogna P. Vecchione" capacity=""/>
+  <pois xsi:type="domain:Indoor" xmi:id="_EUDGYCMjEe-kdKBnMBYA1g" identification="14" longitude="" category="_Uv_0YB9SEe-MJOXqr4RUeA" name="Chiesa di Santa Lucia"/>
+  <pois xsi:type="domain:Indoor" xmi:id="_E3H-QCMjEe-kdKBnMBYA1g" identification="15" category="_US620B9SEe-MJOXqr4RUeA _UhHD0B9SEe-MJOXqr4RUeA" name="Centro visita - &quot;MOrso&quot; - Museo dell'Orso" capacity=""/>
+  <pois xsi:type="domain:Outdoor" xmi:id="_Fd6RcCMjEe-kdKBnMBYA1g" identification="16" latitude="" category="_T9h1oB9SEe-MJOXqr4RUeA _UhHD0B9SEe-MJOXqr4RUeA" name="Val di Rose - Rifugio di Forca Resuni"/>
+  <pois xsi:type="domain:Outdoor" xmi:id="_F-AGwCMjEe-kdKBnMBYA1g" identification="17" category="_T9h1oB9SEe-MJOXqr4RUeA _UhHD0B9SEe-MJOXqr4RUeA" name="Pianoro delle Forme - Passo dei Monaci"/>
+  <pois xsi:type="domain:Outdoor" xmi:id="_GUeGACMjEe-kdKBnMBYA1g" identification="18" category="_UhHD0B9SEe-MJOXqr4RUeA" name="Grotta delle Fate" openingHours=""/>
+  <pois xsi:type="domain:Outdoor" xmi:id="_GwJ8cCMjEe-kdKBnMBYA1g" identification="19" category="_UhHD0B9SEe-MJOXqr4RUeA" name="Piana della Corte"/>
+  <pois xsi:type="domain:Outdoor" xmi:id="_Hfd5gCMjEe-kdKBnMBYA1g" identification="20" category="_UhHD0B9SEe-MJOXqr4RUeA" name="La Camosciara"/>
   <categories xmi:id="_T9h1oB9SEe-MJOXqr4RUeA" category="HIKING"/>
   <categories xmi:id="_ThjrUB9SEe-MJOXqr4RUeA"/>
   <categories xmi:id="_US620B9SEe-MJOXqr4RUeA" category="HISTORY"/>
