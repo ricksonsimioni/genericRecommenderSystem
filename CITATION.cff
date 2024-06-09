@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Simioni Pereira"
+  given-names: "Rickson"
+  orcid: "https://orcid.org/0000-0003-4883-5675"
+- family-names: "Di Sipio"
+  given-names: "Claudio"
+  orcid: "https://orcid.org/0000-0001-9872-9542"
+- family-names: "De Sanctis"
+  given-names: "Martina"
+  orcid: "https://orcid.org/0000-0002-9417-660X" 
+- family-names: "Iovino"
+  given-names: "Ludovico"
+  orcid: "https://orcid.org/0000-0001-6552-2609"
+title: "Towards the automated generation and configuration of domain-specific recommender systems - Replication Package"
+version: 1.0.0
+date-released: 2024-06-03
+url: "https://github.com/gssi/rastaRS"
